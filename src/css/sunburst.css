@@ -1,0 +1,39 @@
+.sunburst-panel {
+    position: relative;
+    padding: 0;
+}
+
+.sunburst-tooltip {
+    position: absolute;
+    height: auto;
+    padding: 10px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.sunburst-tooltip table {
+    border-collapse: collapse;
+    border-spacing: 2px;
+    margin: 0px;
+}
+.sunburst-tooltip thead td {
+    text-align: center;
+    font-weight: bold;
+}
+.sunburst-tooltip tbody td {
+    padding: 0px 10px;
+    text-align: right;
+}
+
+.sunburst-tooltip p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+    transition: opacity 3s 0;
+}
+

@@ -1,0 +1,7 @@
+.sunburst-tooltip {
+    background-color: #ececec;
+    color: #555;
+}
+.sunburst-tooltip thead td {
+    border-bottom: 1px solid #555;
+}
