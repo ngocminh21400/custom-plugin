@@ -7,17 +7,8 @@
     "type": "git",
     "url": "https://github.com/ngocminh21400/custom-plugin"
   },
-
   "author": "SRA OSS, Inc. Japan",
   "license": "Apache 2.0",
-  "scripts": {
-    "build": "grafana-toolkit plugin:build",
-    "test": "grafana-toolkit plugin:test",
-    "dev": "grafana-toolkit plugin:dev",
-    "watch": "grafana-toolkit plugin:dev --watch",
-    "sign": "grafana-toolkit plugin:sign",
-    "start": "yarn watch"
-  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "babel": "~6.5.1",
@@ -37,13 +28,6 @@
     "lodash": "~4.0.0",
     "browserify": "",
     "babelify": "",
-    "uglify-js": "",
-    "@grafana/data": "latest",
-    "@grafana/toolkit": "latest",
-    "@grafana/ui": "latest",
-    "emotion": "10.0.27"
-  },
-  "engines": {
-    "node": ">=14"
+    "uglify-js": ""
   }
 }
