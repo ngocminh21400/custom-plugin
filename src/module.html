@@ -2,8 +2,8 @@
     <div class="graph-canvas-wrapper">
         <div class="sunburst" id="sunburst-div-{{ctrl.panel.id}}">
             <svg id="sunburst-svg-{{ctrl.panel.id}}"></svg>
-
-            <div class="sunburst-tooltip " id="sunburst-tooltip-{{ctrl.panel.id}}">
+            <div class="chart-legend" ng-if="ctrl.panel.legend.show" chart-legend></div>
+            <div class="sunburst-tooltip" id="sunburst-tooltip-{{ctrl.panel.id}}" style="left: 0; bottom: 0;">
             </div>
         </div>
     </div>
