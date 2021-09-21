@@ -242,7 +242,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var path = svg.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
-      .append("path")
+      .append("path","a")
       .attr("d", arc)
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
@@ -251,7 +251,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-    path.append("a");
+    //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
       //   buildFixedTooltip(d);
       //   console.log("asdas");
