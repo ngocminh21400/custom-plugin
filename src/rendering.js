@@ -249,6 +249,8 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
+    
+    var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
   }
 
   // Functions
