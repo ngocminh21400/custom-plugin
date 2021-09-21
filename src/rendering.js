@@ -4,7 +4,6 @@ import $ from 'jquery';
 import moment from 'moment';
 import kbn from 'app/core/utils/kbn';
 import d3 from './d3.v3.min';
-import { parse, stringify, toJSON, fromJSON } from 'flatted';
 
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
