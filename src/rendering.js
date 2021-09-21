@@ -242,7 +242,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var path = svg.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
-      .append("path","a")
+      .append("path")
       .attr("d", arc)
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
@@ -294,7 +294,7 @@ export default function link(scope, elem, attrs, ctrl) {
       key: panel.rootKey,
       values: filteredValues
     };
-
+    console.log(rtn);
     return rtn;
   }
 
