@@ -177,8 +177,8 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.value);
       //console.log(d.key);
       console.log(d);
-      d.children.forEach(element => {
-        console.log(element);
+      d.values.forEach(element => {
+        console.log(element.key);
       });
       console.log(toString(d.children));
       //d3.select("#test-data").data(d);
