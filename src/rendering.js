@@ -256,10 +256,11 @@ export default function link(scope, elem, attrs, ctrl) {
       //   console.log("asdas");
       // });
     var legent = d3.select("#sunburst-div-" + ctrl.panel.id).on("click", function () {
+      console.log(ctrl.data);
         buildFixedTooltip(d);
         console.log("asdas");
     });
-    console.log(legent);
+    //console.log(legent);
 
 
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
