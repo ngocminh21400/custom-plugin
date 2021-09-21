@@ -4,6 +4,7 @@ import $ from 'jquery';
 import moment from 'moment';
 import kbn from 'app/core/utils/kbn';
 import d3 from './d3.v3.min';
+import {parse, stringify} from 'flatted';
 
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
@@ -177,7 +178,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.value);
       //console.log(d.key);
       //console.log(d);
-      //console.log("string "+stringify(d.values));
+      console.log("string "+stringify(d.values));
       //d3.select("#test-data").data(d);
       document.getElementById("test-data").value = CircularJSON.stringify(d);
       console.log(document.getElementById("test-data").value);
