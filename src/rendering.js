@@ -176,9 +176,10 @@ export default function link(scope, elem, attrs, ctrl) {
         .attrTween("d", arcTween(d));
       //console.log(d.value);
       //console.log(d.key);
-      console.log(d);
+      //console.log(d);
       //console.log(JSON.stringify(d.values));
-
+      $(".sunburst").value(d);
+      console.log($(".sunburst"));
       mouseout();
     };
 
