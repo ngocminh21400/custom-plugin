@@ -5,7 +5,6 @@ import moment from 'moment';
 import kbn from 'app/core/utils/kbn';
 import d3 from './d3.v3.min';
 
-
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
   var formaters = [];
@@ -177,13 +176,10 @@ export default function link(scope, elem, attrs, ctrl) {
         .attrTween("d", arcTween(d));
       //console.log(d.value);
       //console.log(d.key);
-      //console.log(d);
+      console.log(d);
       //console.log(JSON.stringify(d.values));
-
-      (function ($) {
-        $(".sunburst").value(d);
-        console.log($(".sunburst"));
-      });
+      d3.select(".sunburst").data(d);
+      console.log(d3.select(".sunburst"));
       mouseout();
     };
 
