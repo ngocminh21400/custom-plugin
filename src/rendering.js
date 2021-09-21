@@ -177,7 +177,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.value);
       //console.log(d.key);
       //console.log(d);
-      console.log("string "+stringify(d.values));
+      //console.log("string "+stringify(d.values));
       //d3.select("#test-data").data(d);
       document.getElementById("test-data").value = CircularJSON.stringify(d);
       console.log(document.getElementById("test-data").value);
