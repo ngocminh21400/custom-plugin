@@ -251,9 +251,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-    var path_label = svg.selectAll("path")
-      .data(partition.nodes(hierarchy))
-      .enter()
+    path.enter()
       .append("text")
       .html("d");
     
