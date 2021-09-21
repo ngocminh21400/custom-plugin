@@ -174,17 +174,7 @@ export default function link(scope, elem, attrs, ctrl) {
        .transition()
        .duration(750)
         .attrTween("d", arcTween(d));
-      //console.log(d.value);
-      //console.log(d.key);
-      console.log(d);
-      d.values.forEach(element => {
-        console.log(element.key);
-      });
-      console.log(toString(d.children));
-      //d3.select("#test-data").data(d);
-      
-      document.getElementById("test-data").value = d;
-      console.log(document.getElementById("test-data").value);
+
       mouseout();
     };
 
@@ -193,8 +183,8 @@ export default function link(scope, elem, attrs, ctrl) {
       var tooltipData = prepareTooltip(d, position);
       //var position_ =d3. mouse(d3.select);
       //console.log($('#sunburst-div-' + ctrl.panel.id));
-      //updateTooltip(tooltipData);
-      buildFixedTooltip(tooltipData);
+      updateTooltip(tooltipData);
+      //buildFixedTooltip(tooltipData);
     };
 
     var x = d3.scale.linear().range([0, 2 * Math.PI]);
@@ -261,6 +251,11 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
+      document.getElementById("#sunburst-legend-" + ctrl.panel.id).addEventListener("click", function () {
+        buildFixedTooltip(d);
+      });
+
+
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
   }
 
@@ -458,16 +453,16 @@ export default function link(scope, elem, attrs, ctrl) {
       .classed('hidden', true);
   }
 
-  function buildFixedTooltip(data_) {
-    
-    var tooltip = d3.select("#sunburst-tooltip-" + ctrl.panel.id)
+  function buildFixedTooltip(data) {
+    console.log(data);
+    var tooltip = d3.select("#sunburst-legend-" + ctrl.panel.id)
       .style("left", "0px")
       .style("bottom", "0px")
       .style("left","0px")
       .classed("hidden", false);
 
-    tooltip.selectAll('table').remove();
-    tooltip.selectAll('p').remove();
+    // tooltip.selectAll('table').remove();
+    // tooltip.selectAll('p').remove();
 
     var table = tooltip.append('table');
     var thead = table.append('thead');
