@@ -183,7 +183,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var tooltipData = prepareTooltip(d, position);
       //var position_ =d3. mouse(d3.select);
       //console.log($('#sunburst-div-' + ctrl.panel.id));
-      updateTooltip(tooltipData);
+      //updateTooltip(tooltipData);
       buildFixedTooltip(tooltipData);
     };
 
@@ -452,7 +452,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var tooltip = d3.select("#sunburst-tooltip-" + ctrl.panel.id)
       .style("left", "0px")
       .style("bottom", "0px")
-      .style("left","unset")
+      .style("left","0px")
       .classed("hidden", false);
 
     tooltip.selectAll('table').remove();
