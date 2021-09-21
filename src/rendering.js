@@ -23,9 +23,9 @@ export default function link(scope, elem, attrs, ctrl) {
     panel = ctrl.panel;
 
     if (setElementHeight()) {
-      console.log(panel);
-      console.log(data);
-      //addSunburst();
+      // console.log(panel);
+      // console.log(data);
+      addSunburst();
     }
   }
 
@@ -181,6 +181,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var mouseover = function(d) {
       var position = d3.mouse(d3.select('#sunburst-div-' + ctrl.panel.id).node());
       var tooltipData = prepareTooltip(d, position);
+      console.log(position);
       updateTooltip(tooltipData);
     };
 
