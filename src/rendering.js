@@ -178,8 +178,8 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.key);
       console.log(d);
       //console.log(JSON.stringify(d.values));
-      d3.select(".sunburst").data(d);
-      console.log(d3.select(".sunburst"));
+      d3.select("#test-data").data(d);
+      console.log(d3.select("#test-data"));
       mouseout();
     };
 
