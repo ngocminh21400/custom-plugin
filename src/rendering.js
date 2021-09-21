@@ -253,6 +253,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
       document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
         buildFixedTooltip(d);
+        console.log("asdas");
       });
 
 
