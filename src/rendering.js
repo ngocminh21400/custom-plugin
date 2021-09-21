@@ -251,7 +251,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-    path.append("text").html("d");
+    // path.append("text").html("d");
     
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
