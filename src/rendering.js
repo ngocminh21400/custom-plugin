@@ -174,8 +174,8 @@ export default function link(scope, elem, attrs, ctrl) {
        .transition()
        .duration(750)
         .attrTween("d", arcTween(d));
-        console.log(d);
-      console.log(JSON.stringify(d));
+        console.log(d.values);
+      console.log(JSON.stringify(d.values));
 
       mouseout();
     };
