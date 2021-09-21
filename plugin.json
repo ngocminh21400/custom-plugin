@@ -1,10 +1,10 @@
 {
   "type": "panel",
-  "name": "Custom-plugin",
-  "id": "Custom-plugin",
+  "name": "Custom",
+  "id": "Custom",
 
   "info": {
-    "description": "Custom-plugin",
+    "description": "Customn",
     "author": {
       "name": "SRA OSS, Inc. Japan",
       "url": "http://www.sraoss.co.jp/"
