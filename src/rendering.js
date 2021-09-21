@@ -451,7 +451,8 @@ export default function link(scope, elem, attrs, ctrl) {
   function buildFixedTooltip(data) {
     var tooltip = d3.select("#sunburst-tooltip-" + ctrl.panel.id)
       .style("left", "0px")
-      .style("bottom",   "0px")
+      .style("bottom", "0px")
+      .style("left","unset")
       .classed("hidden", false);
 
     tooltip.selectAll('table').remove();
