@@ -184,6 +184,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //var position_ =d3. mouse(d3.select);
       //console.log($('#sunburst-div-' + ctrl.panel.id));
       updateTooltip(tooltipData);
+      buildFixedTooltip(tooltipData);
     };
 
     var x = d3.scale.linear().range([0, 2 * Math.PI]);
@@ -445,6 +446,57 @@ export default function link(scope, elem, attrs, ctrl) {
   function hideTooltip() {
     d3.select("#sunburst-tooltip-" + ctrl.panel.id)
       .classed('hidden', true);
+  }
+
+  function buildFixedTooltip(data) {
+    var tooltip = d3.select("#sunburst-tooltip-" + ctrl.panel.id)
+      .style("left", "0px")
+      .style("top",   "0px")
+      .classed("hidden", false);
+
+    tooltip.selectAll('table').remove();
+    tooltip.selectAll('p').remove();
+
+    var table = tooltip.append('table');
+    var thead = table.append('thead');
+    var tbody = table.append('tbody');
+
+    var headerCols = [ 'field', 'sum', 'average', 'rate' ];
+    thead
+    .append('tr')
+      .selectAll('td')
+      .data(headerCols).enter()
+    .append('td')
+      .text(function(d) { return d; });
+
+    _.each(data.tableRows, function(rows, key) {
+      _.each(rows, function(row, i) {
+        var tr = tbody.append('tr');
+
+        tr.append('td').text('- ' + row.key)
+          .style({
+            'font-weight': (key === 'node' && i === rows.length - 1) ?
+                           'bold' : 'normal',
+            'padding-left': (row.depth * 10) + 'px',
+            'border-left' : '3px solid ' + row.color,
+            'text-align': 'left'
+          });
+        tr.append('td').text(row.value);
+        tr.append('td').text(row.avg);
+        tr.append('td').text(row.rate);
+      });
+    });
+
+    // Link
+    if (panel.linkTemplate) {
+      var tooltipHref = data.tooltipHref.replace(/\/\$\d*/g, '');
+
+      tooltip.append('p')
+        .append('a')
+        .attr('href', tooltipHref)
+        .attr('target', '_blank')
+        .text('[ link ]');
+    }
   }
 }
 
