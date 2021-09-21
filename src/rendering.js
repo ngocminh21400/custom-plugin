@@ -174,7 +174,7 @@ export default function link(scope, elem, attrs, ctrl) {
        .transition()
        .duration(750)
        .attrTween("d", arcTween(d));
-
+      console.log(d);
       mouseout();
     };
 
