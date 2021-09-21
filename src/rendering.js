@@ -181,7 +181,8 @@ export default function link(scope, elem, attrs, ctrl) {
     var mouseover = function(d) {
       var position = d3.mouse(d3.select('#sunburst-div-' + ctrl.panel.id).node());
       var tooltipData = prepareTooltip(d, position);
-      console.log(position);
+      var position_ = d3.mouse(d3.select('#sunburst-div-' + ctrl.panel.id));
+      console.log(position_);
       updateTooltip(tooltipData);
     };
 
