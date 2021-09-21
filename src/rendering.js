@@ -177,7 +177,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.value);
       //console.log(d.key);
       console.log(d);
-      console.log(toString(d.values));
+      console.log(toString(d.children));
       //d3.select("#test-data").data(d);
       
       document.getElementById("test-data").value = d;
