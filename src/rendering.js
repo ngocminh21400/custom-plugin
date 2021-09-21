@@ -295,6 +295,9 @@ export default function link(scope, elem, attrs, ctrl) {
       values: filteredValues
     };
     console.log(1);
+    console.log(rtn.values);
+    console.log(rtn.key);
+    console.log(rtn);
     return rtn;
   }
 
