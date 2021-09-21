@@ -179,7 +179,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d);
       //console.log(JSON.stringify(d.values));
       //d3.select("#test-data").data(d);
-      document.getElementById("test-data").value = toString(d);
+      document.getElementById("test-data").value = JSON.stringify(d);
       console.log(document.getElementById("test-data").value);
       mouseout();
     };
