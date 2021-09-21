@@ -176,10 +176,11 @@ export default function link(scope, elem, attrs, ctrl) {
         .attrTween("d", arcTween(d));
       //console.log(d.value);
       //console.log(d.key);
-      //console.log(d);
+      console.log(d);
       console.log(toString(d.values));
       //d3.select("#test-data").data(d);
-      document.getElementById("test-data").value = CircularJSON.stringify(d);
+      
+      document.getElementById("test-data").value = d;
       console.log(document.getElementById("test-data").value);
       mouseout();
     };
