@@ -5,6 +5,7 @@ import moment from 'moment';
 import kbn from 'app/core/utils/kbn';
 import d3 from './d3.v3.min';
 
+
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
   var formaters = [];
@@ -178,8 +179,11 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log(d.key);
       //console.log(d);
       //console.log(JSON.stringify(d.values));
-      $(".sunburst").value(d);
-      console.log($(".sunburst"));
+
+      (function ($) {
+        $(".sunburst").value(d);
+        console.log($(".sunburst"));
+      });
       mouseout();
     };
 
