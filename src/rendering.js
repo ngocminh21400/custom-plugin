@@ -243,7 +243,6 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
-      .append("a")
       .attr("d", arc)
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
@@ -252,6 +251,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
+    path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
       //   buildFixedTooltip(d);
       //   console.log("asdas");
