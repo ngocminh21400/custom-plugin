@@ -251,10 +251,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-      document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
-        buildFixedTooltip(d);
-        console.log("asdas");
-      });
+      // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
+      //   buildFixedTooltip(d);
+      //   console.log("asdas");
+      // });
+    var legent = d3.select("#sunburst-div-" + ctrl.panel.id);
+    console.log(1);
 
 
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
