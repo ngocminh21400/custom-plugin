@@ -251,7 +251,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-      document.getElementsByClassName("legend").addEventListener("click", function () {
+      document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
         buildFixedTooltip(d);
       });
 
