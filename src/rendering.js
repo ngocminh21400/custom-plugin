@@ -173,9 +173,10 @@ export default function link(scope, elem, attrs, ctrl) {
       svg.selectAll("path")
        .transition()
        .duration(750)
-       .attrTween("d", arcTween(d));
+        .attrTween("d", arcTween(d));
+        console.log(d);
       console.log(JSON.stringify(d));
-      console.log(d);
+
       mouseout();
     };
 
