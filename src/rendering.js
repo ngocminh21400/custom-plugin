@@ -174,7 +174,8 @@ export default function link(scope, elem, attrs, ctrl) {
        .transition()
        .duration(750)
        .attrTween("d", arcTween(d));
-      console.log(d);
+      console.log(JSON.stringify(d));
+      
       mouseout();
     };
 
@@ -448,7 +449,8 @@ export default function link(scope, elem, attrs, ctrl) {
       .classed('hidden', true);
   }
 
-  function buildFixedTooltip(data) {
+  function buildFixedTooltip(data_) {
+    
     var tooltip = d3.select("#sunburst-tooltip-" + ctrl.panel.id)
       .style("left", "0px")
       .style("bottom", "0px")
