@@ -251,6 +251,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
+    var path_label = svg.selectAll("path")
+      .data(partition.nodes(hierarchy))
+      .enter()
+      .append("text")
+      .html("d");
+    
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
       //   buildFixedTooltip(d);
@@ -294,10 +300,10 @@ export default function link(scope, elem, attrs, ctrl) {
       key: panel.rootKey,
       values: filteredValues
     };
-    console.log(1);
-    console.log(rtn.values);
-    console.log(rtn.key);
-    console.log(rtn);
+    // console.log(1);
+    // console.log(rtn.values);
+    // console.log(rtn.key);
+    // console.log(rtn);
     return rtn;
   }
 
