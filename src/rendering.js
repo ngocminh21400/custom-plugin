@@ -256,7 +256,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .append('text');
     var textPath = svg.selectAll("path")
       .select('text')
-      .data(partition.nodes(hierarchy))
+      .data(hierarchy)
       .enter()
       .append('textPath')
       .text('bshdhd');
