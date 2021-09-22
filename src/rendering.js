@@ -261,9 +261,15 @@ export default function link(scope, elem, attrs, ctrl) {
     // text.forEach(element => {
       
     // });
-    rawData.forEach(function (a) {
-      console.log(a);
+    i = 1;
+    rawData.forEach(function (d) {
+      console.log(d);
+      var textPath = d3.selectAll('#text-label')
+      .append('textPath')
+      .attr("href",i++)
+      .text(d.parent);
     });
+    
     console.log(d3.select('#text-label'));
     var textPath = d3.selectAll('#text-label')
       // .data(rawData)
