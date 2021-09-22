@@ -258,7 +258,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(rawData)
       .enter()
       .append('textPath')
-      .attr("id",d=>d)
+      
       .text(function (d) {
         console.log(d);
           return d;
