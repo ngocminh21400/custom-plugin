@@ -261,9 +261,8 @@ export default function link(scope, elem, attrs, ctrl) {
     
     text.forEach(element => {
       console.log(element);
-      
-      element.select('text')
-      .data(rawData)
+
+      element.data(rawData)
       .enter()
       .append('textPath')
       .attr("id",function(i) {
