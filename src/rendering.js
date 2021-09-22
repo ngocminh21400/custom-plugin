@@ -244,7 +244,6 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
-      .append(content)
       .attr("d", arc)
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
