@@ -262,7 +262,7 @@ export default function link(scope, elem, attrs, ctrl) {
       
     // });
     
-    var textPath = svg.select('text')
+    var textPath = d3.selectAll('text')
       .data(rawData)
       .enter()
       .append('textPath')
