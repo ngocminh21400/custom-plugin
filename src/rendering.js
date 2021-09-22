@@ -256,20 +256,20 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
 
-    var text = svg.selectAll("path")
+    var text = svg.select("path")
       .append('text');
     
     // text.forEach(element => {
       
     // });
     
-    var textPath = text.selectAll('path text')
+    var textPath = text.select('path text')
       .data(rawData)
       .enter()
       .append('textPath')
-      .attr("id",function(d, i) {
+      .attr("href",function(d, i) {
         i = i + 1;
-        return "id-" +i;
+        return "#id-" +i;
       })
       .text(function (d) {
         console.log(d);
