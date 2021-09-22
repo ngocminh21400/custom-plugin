@@ -263,7 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
       
     // });
     
-    var textPath = text.selectAll('path text')
+    var textPath = text.select('path text')
       .data(rawData)
       .enter()
       .append('textPath')
