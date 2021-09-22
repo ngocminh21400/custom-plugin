@@ -267,7 +267,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var textPath = d3.selectAll('#text-label')
       .append('textPath')
       .attr("href","#id-"+i++)
-      .text(d.parent);
+      .text(d.number);
     });
 
     console.log(d3.select('#text-label'));
