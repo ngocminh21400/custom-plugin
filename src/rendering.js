@@ -265,7 +265,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var textPath = svg.selectAll('text')
       .data(rawData)
       .enter()
-      .append('textPath')
+      .appendChild('textPath')
       .attr("href",function(d, i) {
         i = i + 1;
         return "#id-" +i;
