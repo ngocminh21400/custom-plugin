@@ -252,15 +252,21 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-     var text = svg.selectAll("path").append('p');
-      console.log(text);
+    var text = svg.selectAll("path")
+      .data(partition.nodes(hierarchy))
+      .enter()
+      .append(content);
+    console.log(text);
+    
+
     path.forEach(element => {
-      console.log(element);
+      // console.log(element);
+      
       element.addEventListener("click", function () {
           console.log("asdas");
       });
-      element.data(partition.nodes(hierarchy)).enter().append('a');
-      console.log(element);
+      // element.data(partition.nodes(hierarchy)).enter().append('a');
+      // console.log(element);
     });
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
