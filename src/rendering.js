@@ -257,15 +257,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
 
     var text = svg.selectAll("path")
-      .append('text').attr("id",function(d, i) {
-        i = i + 1;
-        return "id-" +i;
-      });
+      .append('text');
     
-    text.forEach(element => {
-      console.log(element);
-
-      let temp = element.append('textPath')
+    var textPath = text.select('text')
+      .data(rawData)
+      .enter()
+      .append('textPath')
       .attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
@@ -274,11 +271,7 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(d);
           return d.parent;
       });
-
-
-      console.log(temp);
-    });
-
+    console.log(textPath);
     
 
     path.forEach(element => {
