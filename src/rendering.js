@@ -266,10 +266,10 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log(d);
       var textPath = d3.selectAll('#text-label')
       .append('textPath')
-      .attr("href",i++)
-      .text(d.parent);
+      .attr("href","#id-"+i++)
+      .text(d[0]);
     });
-    
+
     console.log(d3.select('#text-label'));
     var textPath = d3.selectAll('#text-label')
       // .data(rawData)
