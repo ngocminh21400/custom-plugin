@@ -259,6 +259,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(hierarchy)
       .enter()
       .append('textPath')
+      .attr("id",d.key)
       .text('bshdhd');
     console.log(text);
     
