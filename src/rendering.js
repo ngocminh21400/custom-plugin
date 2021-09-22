@@ -251,8 +251,8 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    path.data(partition.nodes(hierarchy)).enter().append('a');
-    console.log(path);
+     var text = svg.selectAll("path").data(partition.nodes(hierarchy)).enter().append('a');
+    console.log(text);
     path.forEach(element => {
       console.log(element);
 
