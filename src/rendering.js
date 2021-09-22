@@ -245,7 +245,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("path")
       .attr("d", arc)
-      .attr("id",function(i) {
+      .attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
       })
@@ -257,7 +257,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
 
     var text = svg.selectAll("path")
-      .append('text').attr("id",function(i) {
+      .append('text').attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
       });
@@ -265,8 +265,8 @@ export default function link(scope, elem, attrs, ctrl) {
     text.forEach(element => {
       console.log(element);
 
-      element.append('textPath')
-      .attr("id",function(i) {
+      let temp = element.append('textPath')
+      .attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
       })
@@ -276,7 +276,7 @@ export default function link(scope, elem, attrs, ctrl) {
       });
 
 
-      console.log(element);
+      console.log(temp);
     });
 
     
