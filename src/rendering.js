@@ -262,10 +262,10 @@ export default function link(scope, elem, attrs, ctrl) {
       
     // });
     console.log(d3.select('#text-label'));
-    var textPath = d3.select('#text-label')
+    var textPath = d3.selectAll('#text-label')
       .data(rawData)
       .enter()
-      .appendChild('textPath')
+      .append('textPath')
       .attr("href",function(d, i) {
         i = i + 1;
         return "#id-" +i;
