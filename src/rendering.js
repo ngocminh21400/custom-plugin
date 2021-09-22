@@ -257,16 +257,16 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
 
     var text = svg.selectAll("path")
-      .appendChild('text');
+      .append('text');
     
     // text.forEach(element => {
       
     // });
     
-    var textPath = text.select('text')
+    var textPath = text.selectAll('path text')
       .data(rawData)
       .enter()
-      .appendChild('textPath')
+      .append('textPath')
       .attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
