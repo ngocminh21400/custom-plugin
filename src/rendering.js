@@ -259,7 +259,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var text = svg.selectAll("path")
       .append('text');
     
-    var textPath = text.select('text')
+    var textPath = svg.selectAll("path").selectAll('text')
       .data(rawData)
       .enter()
       .append('textPath')
