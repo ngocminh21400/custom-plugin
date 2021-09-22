@@ -263,7 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
       
     // });
     
-    var textPath = text.select('path text')
+    var textPath = svg.select('path text')
       .data(rawData)
       .enter()
       .append('textPath')
