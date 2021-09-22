@@ -238,11 +238,13 @@ export default function link(scope, elem, attrs, ctrl) {
         (margin.left + width  / 2) + ", " +
         (margin.top  + height / 2) + ")"
       );
+      let content = '<text><textPath>123456789</textPath></text>';
 
     var path = svg.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
+      .append(content)
       .attr("d", arc)
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
@@ -250,8 +252,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    let content = '<text><textPath>123456789</textPath></text>';
-    path.enter().append(content);
+    //path.enter().append(content);
     
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
