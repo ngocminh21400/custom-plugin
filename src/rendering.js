@@ -259,10 +259,10 @@ export default function link(scope, elem, attrs, ctrl) {
     var text = svg.selectAll("path")
       .append('text');
     
-    var textPath = text.select('text')
+    var textPath = svg.selectAll("path").select('text')
       .data(rawData)
       .enter()
-      .append('textPath')
+      .html('textPath')
       .attr("id",function(d, i) {
         i = i + 1;
         return "id-" +i;
