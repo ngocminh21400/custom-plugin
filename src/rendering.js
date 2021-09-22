@@ -258,12 +258,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .selectAll('text')
       // .data(rawData)
       // .enter()
-      .append('textPath')
+      .append('textPath');
       
-      .text(function (d) {
-        console.log(d);
-          return d;
-      });
+      // .text(function (d) {
+      //   console.log(d);
+      //     return d;
+      // });
     console.log(textPath);
     
 
