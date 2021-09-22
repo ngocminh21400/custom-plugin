@@ -260,8 +260,9 @@ export default function link(scope, elem, attrs, ctrl) {
       .append('text');
     
     text.forEach(element => {
+      console.log(element);
       
-      var textPath = element.select('text')
+      element.select('text')
       .data(rawData)
       .enter()
       .append('textPath')
@@ -273,7 +274,9 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(d);
           return d.parent;
       });
-      console.log(textPath);
+
+
+      console.log(element);
     });
 
     
