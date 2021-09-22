@@ -257,7 +257,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
 
     var text = svg.selectAll("path")
-      .append('text');
+      .appendChild('text');
     
     // text.forEach(element => {
       
@@ -275,6 +275,7 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(d);
           return d.parent;
       });
+    
     console.log(textPath);
     
 
