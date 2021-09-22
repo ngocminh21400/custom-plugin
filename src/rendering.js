@@ -251,12 +251,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    //path.enter().append(content);
-    //console.log(path);
+    path.data(partition.nodes(hierarchy)).enter().append('a');
+    console.log(path);
     path.forEach(element => {
       console.log(element);
 
-      element.enter().append('a');
+      element.data(partition.nodes(hierarchy)).enter().append('a');
       console.log(element);
     });
     //path.append("a");
