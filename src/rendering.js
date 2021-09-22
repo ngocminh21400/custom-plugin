@@ -260,7 +260,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append('textPath')
       .attr("id",d=>d)
-      .text('bshdhd');
+      .text(function (d) {
+        console.log(d);
+          return d;
+      });
     console.log(text);
     
 
