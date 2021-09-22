@@ -254,8 +254,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     var text = svg.selectAll("path")
       .append('text');
-    var textPath = svg.selectAll("path")
-      .select('text')
+    var textPath = text.selectAll('text')
       .data(hierarchy)
       .enter()
       .append('textPath')
@@ -264,7 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(d);
           return d;
       });
-    console.log(text);
+    console.log(textPath);
     
 
     path.forEach(element => {
