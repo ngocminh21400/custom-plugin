@@ -252,8 +252,13 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     //path.enter().append(content);
-    console.log(path);
-    console.log(svg.selectAll("path"));
+    //console.log(path);
+    path.forEach(element => {
+      console.log(element);
+
+      element.enter().append('a');
+      console.log(element);
+    });
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
       //   buildFixedTooltip(d);
