@@ -262,9 +262,7 @@ export default function link(scope, elem, attrs, ctrl) {
     text.forEach(element => {
       console.log(element);
 
-      element.data(rawData)
-      .enter()
-      .append('textPath')
+      element.append('textPath')
       .attr("id",function(i) {
         i = i + 1;
         return "id-" +i;
