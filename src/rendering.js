@@ -253,9 +253,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
     
     var text = svg.selectAll("path")
-      .data(partition.nodes(hierarchy))
-      .enter()
-      .append(content);
+      // .data(partition.nodes(hierarchy))
+      // .enter()
+      .append('text');
+      
     console.log(text);
     
 
