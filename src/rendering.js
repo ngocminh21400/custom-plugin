@@ -261,6 +261,9 @@ export default function link(scope, elem, attrs, ctrl) {
     // text.forEach(element => {
       
     // });
+    rawData.forEach(function (a) {
+      console.log(a);
+    });
     console.log(d3.select('#text-label'));
     var textPath = d3.selectAll('#text-label')
       // .data(rawData)
