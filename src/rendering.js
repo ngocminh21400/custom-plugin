@@ -254,8 +254,8 @@ export default function link(scope, elem, attrs, ctrl) {
     
     var text = svg.selectAll("path")
       .append('text');
-    var textPath = text.selectAll('text')
-      .data(hierarchy)
+    var textPath = text.select('text')
+      .data([1,2,3])
       .enter()
       .append('textPath')
       .attr("id",d=>d)
