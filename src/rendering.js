@@ -256,14 +256,13 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
 
-    var text = svg.selectAll("path")
-      .append('text');
+    var text = svg.append('text');
     
     // text.forEach(element => {
       
     // });
     
-    var textPath = svg.select('path text')
+    var textPath = svg.select('text')
       .data(rawData)
       .enter()
       .append('textPath')
