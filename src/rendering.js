@@ -250,8 +250,8 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    
-    // path.append("text").html("d");
+    let content = '<text><textPath>123456789</textPath></text>';
+    path.append(content);
     
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
