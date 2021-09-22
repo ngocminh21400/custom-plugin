@@ -263,17 +263,17 @@ export default function link(scope, elem, attrs, ctrl) {
     // });
     console.log(d3.select('#text-label'));
     var textPath = d3.selectAll('#text-label')
-      .data(rawData)
-      .enter()
-      .append('textPath')
-      .attr("href",function(d, i) {
-        i = i + 1;
-        return "#id-" +i;
-      })
-      .text(function (d) {
-        console.log(d);
-          return d.parent;
-      });
+      // .data(rawData)
+      // .enter()
+      .append('textPath');
+      // .attr("href", function (d, i) {
+      //   i = i + 1;
+      //   return "#id-" + i;
+      // })
+      // .text(function (d) {
+      //   console.log(d);
+      //     return d.parent;
+      // });
     
     console.log(textPath);
     
