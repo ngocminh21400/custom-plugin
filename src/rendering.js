@@ -257,7 +257,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
 
     var text = svg.selectAll("path")
-      .append('text');
+      .append('text').attr("id",function(i) {
+        i = i + 1;
+        return "id-" +i;
+      });
     
     text.forEach(element => {
       console.log(element);
