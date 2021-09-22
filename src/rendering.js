@@ -183,8 +183,8 @@ export default function link(scope, elem, attrs, ctrl) {
       var tooltipData = prepareTooltip(d, position);
       //var position_ =d3. mouse(d3.select);
       //console.log($('#sunburst-div-' + ctrl.panel.id));
-      updateTooltip(tooltipData);
-      //buildFixedTooltip(tooltipData);
+      //updateTooltip(tooltipData);
+      buildFixedTooltip(tooltipData);
     };
 
     var x = d3.scale.linear().range([0, 2 * Math.PI]);
@@ -285,7 +285,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // });
     
     console.log(textPath);
-    
+    buildFixedTooltip()
 
     path.forEach(element => {
       // console.log(element);
