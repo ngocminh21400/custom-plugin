@@ -263,11 +263,11 @@ export default function link(scope, elem, attrs, ctrl) {
       
     // });
     
-    var textPath = svg.select('path text')
+    var textPath = text.select('path text')
       .data(rawData)
       .enter()
       .append('textPath')
-      .attr("href",function(d, i) {
+      .attr("id",function(d, i) {
         i = i + 1;
         return "#id-" +i;
       })
