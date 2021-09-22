@@ -245,14 +245,17 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("path")
       .attr("d", arc)
-      .attr("id","id-" + i++)
+      .attr("id",function(i) {
+        i = i + 1;
+        return "id-" +i;
+      })
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    i = 0;
+
     var text = svg.selectAll("path")
       .append('text');
     
@@ -260,7 +263,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(rawData)
       .enter()
       .append('textPath')
-      .attr("id","id-" + i++)
+      .attr("id",function(i) {
+        i = i + 1;
+        return "id-" +i;
+      })
       .text(function (d) {
         console.log(d);
           return d.parent;
