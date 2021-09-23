@@ -252,19 +252,17 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
-      .on("click", click)
+      // .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-    function partition_new(data) {
-      const root = d3.hierarchy(data)
-          .sum(d => d.value)
-          .sort((a, b) => b.value - a.value);
-      return d3.partition()
-          .size([2 * Math.PI, root.height + 1])
-        (root);
-    }
-    var root = partition_new(data);
+    
+    
+    
+    
+  // new commit
+
+    var root = d3.partition(data);
     console.log(root);
     console.log(partition(data));
     console.log(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
