@@ -266,7 +266,7 @@ export default function link(scope, elem, attrs, ctrl) {
     }
     var root = partition_new(data);
     console.log(root);
-    console.log(partition.(data));
+    console.log(partition(data));
     console.log(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
     var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .append("g")
