@@ -554,31 +554,33 @@ export default function link(scope, elem, attrs, ctrl) {
     var thead = table.append('thead');
     var tbody = table.append('tbody');
 
-    var headerCols = [ 'field', 'sum', 'average', 'rate' ];
-    thead
-    .append('tr')
-      .selectAll('td')
-      .data(headerCols).enter()
-    .append('td')
-      .text(function(d) { return d; });
-
-    _.each(data.tableRows, function(rows, key) {
-      _.each(rows, function(row, i) {
-        var tr = tbody.append('tr');
-
-        tr.append('td').text('- ' + row.key)
-          .style({
-            'font-weight': (key === 'node' && i === rows.length - 1) ?
-                           'bold' : 'normal',
-            'padding-left': (row.depth * 10) + 'px',
-            'border-left' : '3px solid ' + row.color,
-            'text-align': 'left'
-          });
-        tr.append('td').text(row.value);
-        tr.append('td').text(row.avg);
-        tr.append('td').text(row.rate);
-      });
+    // var headerCols = [ 'field', 'sum', 'average', 'rate' ];
+    // thead
+    // .append('tr')
+    //   .selectAll('td')
+    //   .data(headerCols).enter()
+    // .append('td')
+    //   .text(function(d) { return d; });
+    _.each(data, function (row) {
+      console.log(row);
     });
+    // _.each(data.tableRows, function(rows, key) {
+    //   _.each(rows, function(row, i) {
+    //     var tr = tbody.append('tr');
+
+    //     tr.append('td').text('- ' + row.key)
+    //       .style({
+    //         'font-weight': (key === 'node' && i === rows.length - 1) ?
+    //                        'bold' : 'normal',
+    //         'padding-left': (row.depth * 10) + 'px',
+    //         'border-left' : '3px solid ' + row.color,
+    //         'text-align': 'left'
+    //       });
+    //     tr.append('td').text(row.value);
+    //     tr.append('td').text(row.avg);
+    //     tr.append('td').text(row.rate);
+    //   });
+    // });
 
     // Link
     if (panel.linkTemplate) {
