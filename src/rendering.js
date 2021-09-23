@@ -572,7 +572,11 @@ export default function link(scope, elem, attrs, ctrl) {
           'margin-right': '20px',
           'text-align': 'left'
         });
-      tr.append('td').text(row.key);
+      tr.append('td').text(row.key)
+      .style({
+        'margin-left': '20px',
+        'text-align': 'left'
+      });
     });
     // _.each(data.tableRows, function(rows, key) {
     //   _.each(rows, function(row, i) {
