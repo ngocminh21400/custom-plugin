@@ -263,12 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-    console.log(partition(data));
-    console.log(ctrl.data);
-    var root = d3.partition(data);
-    console.log(root);
-    console.log(partition(data));
-    console.log(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
+
     var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .append("g")
       .attr("pointer-events", "none")
@@ -276,15 +271,16 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("font-size", 10)
       .attr("font-family", "sans-serif")
       .selectAll("text")
-      .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
-      .join("text")
-        .attr("transform", function(d) {
-          const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-          const y = (d.y0 + d.y1) / 2;
-          return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-        })
+      // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
+      // .join("text")
+      //   .attr("transform", function(d) {
+      //     const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+      //     const y = (d.y0 + d.y1) / 2;
+      //     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+      //   })
         .attr("dy", "0.35em")
-      .text(d => d.data.name);
+      .text('d => d.data.name');
+    
     console.log(label);
     
     var text = svg.append('text').attr("id","text-label");
