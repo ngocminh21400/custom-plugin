@@ -2,16 +2,23 @@
     <div class="graph-canvas-wrapper">
         <div class="sunburst" id="sunburst-div-{{ctrl.panel.id}}">
             <!-- <input type="text" id="test-data" > -->
-
+            
             <svg id="sunburst-svg-{{ctrl.panel.id}}"></svg>
-            <div class="chart-legend" ng-if="ctrl.panel.legend.show" chart-legend></div>
+           
             <div class="sunburst-tooltip hidden" id="sunburst-tooltip-{{ctrl.panel.id}}"> </div>
-            <div id="sunburst-legend-{{ctrl.panel.id}}" class="legend"></div>
         </div>
+        <div id="sunburst-legend-{{ctrl.panel.id}}" class="sunburst-legend legend"></div>
     </div>
 </div>
 <div class="clearfix"></div>
 <style>
+    .sunburst{
+        width: 80%;
+
+    }
+    .sunburst-legend{
+        width: 20%;
+    }
     .legend{
         height: auto;
         width: auto;

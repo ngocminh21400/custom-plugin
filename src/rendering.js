@@ -563,6 +563,9 @@ export default function link(scope, elem, attrs, ctrl) {
     
     _.each(data, function (row) {
       console.log(row);
+      if (row.key == "root") {
+        return;
+      }
       var tr = tbody.append('tr');
       tr.append('td').text('')
         .style({
