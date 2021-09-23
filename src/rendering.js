@@ -545,12 +545,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
   function buildFixedTooltip(data) {
     console.log(data);
-    var tooltip = d3.select("#sunburst-legend-" + ctrl.panel.id)
-      .style("left", "0px")
-      .style("bottom", "0px")
-      .style("left","0px")
-      .classed("hidden", false);
-
+    var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
+    console.log(legend);
     tooltip.selectAll('table').remove();
     tooltip.selectAll('p').remove();
 
