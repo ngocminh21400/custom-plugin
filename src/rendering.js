@@ -264,13 +264,12 @@ export default function link(scope, elem, attrs, ctrl) {
     
   // new commit
 
-    var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .append("g")
+    var label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .attr("font-size", 10)
       .attr("font-family", "sans-serif")
-      .selectAll("text")
+      //.selectAll("text")
       // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
       // .join("text")
       //   .attr("transform", function(d) {
