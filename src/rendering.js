@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log(panel);
       // console.log(data);
       addSunburst();
-      buildFixedTooltip(ctrl.data.datapoints)
+      
     }
   }
 
@@ -265,9 +265,9 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-    console.log(rawData);
-    console.log(partition.nodes(hierarchy));
-    console.log(hierarchy);
+    // console.log(rawData);
+    // console.log(partition.nodes(hierarchy));
+    // console.log(hierarchy);
     var label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
@@ -284,7 +284,7 @@ export default function link(scope, elem, attrs, ctrl) {
         .attr("dy", "0.35em")
       .text('d => d.data.name');
     
-    console.log(label);
+    //console.log(label);
     
     var text = svg.append('text').attr("id","text-label");
     
@@ -340,6 +340,10 @@ export default function link(scope, elem, attrs, ctrl) {
 
 
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
+
+
+    //build legend
+    buildFixedTooltip(partition.nodes(hierarchy));
   }
 
   // Functions
