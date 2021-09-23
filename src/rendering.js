@@ -255,7 +255,25 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-
+    var root = partition(data);
+    
+    var label =   svg.append("g")
+      .attr("pointer-events", "none")
+      .attr("text-anchor", "middle")
+      .attr("font-size", 10)
+      .attr("font-family", "sans-serif")
+      .selectAll("text")
+      .data(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
+      .join("text")
+        .attr("transform", function(d) {
+          const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+          const y = (d.y0 + d.y1) / 2;
+          return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+        })
+        .attr("dy", "0.35em")
+      .text(d => d.data.name);
+    
+    
     var text = svg.append('text').attr("id","text-label");
     
     // text.forEach(element => {
@@ -285,7 +303,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // });
     
     console.log(textPath);
-    buildFixedTooltip()
+    //buildFixedTooltip()
 
     path.forEach(element => {
       // console.log(element);
@@ -517,8 +535,8 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("left","0px")
       .classed("hidden", false);
 
-    // tooltip.selectAll('table').remove();
-    // tooltip.selectAll('p').remove();
+    tooltip.selectAll('table').remove();
+    tooltip.selectAll('p').remove();
 
     var table = tooltip.append('table');
     var thead = table.append('thead');
