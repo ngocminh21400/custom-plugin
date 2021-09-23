@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log(panel);
       // console.log(data);
       addSunburst();
-      buildFixedTooltip()
+      buildFixedTooltip(ctrl.data.datapoints)
     }
   }
 
@@ -184,7 +184,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var tooltipData = prepareTooltip(d, position);
       //var position_ =d3. mouse(d3.select);
       //console.log($('#sunburst-div-' + ctrl.panel.id));
-      console.log(tooltipData);
+      //console.log(tooltipData);
       updateTooltip(tooltipData);
       //buildFixedTooltip(tooltipData);
     };
@@ -540,7 +540,7 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   function buildFixedTooltip(data) {
-    //console.log(data);
+    console.log(data);
     var tooltip = d3.select("#sunburst-legend-" + ctrl.panel.id)
       .style("left", "0px")
       .style("bottom", "0px")
