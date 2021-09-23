@@ -271,7 +271,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("text-anchor", "middle")
       .attr("font-size", 10)
       .attr("font-family", "sans-serif")
-      //.selectAll("text")
+      .selectAll("text")
       // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
       // .join("text")
       //   .attr("transform", function(d) {
