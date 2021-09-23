@@ -263,7 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-
+      console.log(rawData);
     var label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
