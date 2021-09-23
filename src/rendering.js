@@ -263,7 +263,8 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-      console.log(rawData);
+    console.log(rawData);
+    console.log(ctrl.data);
     var label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
@@ -289,7 +290,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // });
     i = 1;
     rawData.forEach(function (d) {
-      console.log(d);
+      //console.log(d);
       var textPath = d3.selectAll('#text-label')
       .append('textPath')
       .attr("href","#id-"+i++)
