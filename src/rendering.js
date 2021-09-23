@@ -263,7 +263,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-    console.log(data);
+    console.log(partition(data));
     console.log(ctrl.data);
     var root = d3.partition(data);
     console.log(root);
