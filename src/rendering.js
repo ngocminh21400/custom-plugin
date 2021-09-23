@@ -255,9 +255,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("click", click)
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
-    var root = partition(data);
     
-    var label =   svg.append("g")
+    
+    var root = partition(data);
+    console.log(root);
+    var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
+      .append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .attr("font-size", 10)
@@ -272,7 +275,7 @@ export default function link(scope, elem, attrs, ctrl) {
         })
         .attr("dy", "0.35em")
       .text(d => d.data.name);
-    
+    console.log(label);
     
     var text = svg.append('text').attr("id","text-label");
     
