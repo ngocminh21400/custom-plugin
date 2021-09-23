@@ -564,11 +564,12 @@ export default function link(scope, elem, attrs, ctrl) {
     _.each(data, function (row) {
       console.log(row);
       var tr = tbody.append('tr');
-      tr.append('td').text('span')
+      tr.append('td').text('')
         .style({
           'background-color': row.color,
           'height': "20px",
-          'width' : "20px",
+          'width': "20px",
+          'margin-right': '20px',
           'text-align': 'left'
         });
       tr.append('td').text(row.key);
