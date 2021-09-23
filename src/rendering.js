@@ -575,7 +575,9 @@ export default function link(scope, elem, attrs, ctrl) {
           'margin-right': '20px',
           'text-align': 'left'
         });
-      tr.append('td').text(row.key)
+      tr.append('td').text(function () {
+        return row.key;
+      })
       .style({
         'padding-left': '20px',
         'text-align': 'left'
