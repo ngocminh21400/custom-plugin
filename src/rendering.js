@@ -237,18 +237,20 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("transform", "translate(" +
         (margin.left + width  / 2) + ", " +
         (margin.top  + height / 2) + ")"
-      );
-      let content = '<text><textPath>123456789</textPath></text>';
+    );
+    
+
+    let content = '<text><textPath>123456789</textPath></text>';
     var i = 0;
     var path = svg.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
       .attr("d", arc)
-      .attr("id",function(d, i) {
-        i = i + 1;
-        return "id-" +i;
-      })
+      // .attr("id",function(d, i) {
+      //   i = i + 1;
+      //   return "id-" +i;
+      // })
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
@@ -261,7 +263,8 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-
+    console.log(data);
+    console.log(ctrl.data);
     var root = d3.partition(data);
     console.log(root);
     console.log(partition(data));
