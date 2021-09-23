@@ -576,7 +576,12 @@ export default function link(scope, elem, attrs, ctrl) {
           'text-align': 'left'
         });
       tr.append('td').text(function () {
-        return row.key;
+        var text = '';
+        if (row.parent.key != 'root') {
+          text += row.parent.key + " - ";
+        }
+        text += row.key;
+        return text;
       })
       .style({
         'padding-left': '20px',
