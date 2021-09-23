@@ -257,8 +257,9 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseout", mouseout);
     
     
-    var root = partition(data);
-    console.log(root);
+    //var root = partition(data);
+    console.log(partition.nodes(hierarchy));
+    console.log(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
     var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .append("g")
       .attr("pointer-events", "none")
@@ -266,7 +267,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("font-size", 10)
       .attr("font-family", "sans-serif")
       .selectAll("text")
-      .data(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
+      .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
       .join("text")
         .attr("transform", function(d) {
           const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
