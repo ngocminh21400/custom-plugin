@@ -546,21 +546,21 @@ export default function link(scope, elem, attrs, ctrl) {
   function buildFixedTooltip(data) {
     console.log(data);
     var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
-    //console.log(legend);
-    // tooltip.selectAll('table').remove();
-    // tooltip.selectAll('p').remove();
+    console.log(legend);
+    legend.selectAll('table').remove();
+    legend.selectAll('p').remove();
 
     var table = legend.append('table');
     var thead = table.append('thead');
     var tbody = table.append('tbody');
 
     // var headerCols = [ 'field', 'sum', 'average', 'rate' ];
-    // thead
-    // .append('tr')
-    //   .selectAll('td')
-    //   .data(headerCols).enter()
-    // .append('td')
-    //   .text(function(d) { return d; });
+    // thead.append('tr')
+    //   .append('td')
+    //   .text(function (d) { return d; });
+    
+    
+    
     _.each(data, function (row) {
       console.log(row);
       var tr = tbody.append('tr');
@@ -574,7 +574,7 @@ export default function link(scope, elem, attrs, ctrl) {
         });
       tr.append('td').text(row.key)
       .style({
-        'margin-left': '20px',
+        'padding-left': '20px',
         'text-align': 'left'
       });
     });
