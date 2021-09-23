@@ -264,7 +264,8 @@ export default function link(scope, elem, attrs, ctrl) {
     
   // new commit
     console.log(rawData);
-    console.log(ctrl.data);
+    console.log(partition.nodes(hierarchy));
+    console.log(hierarchy);
     var label = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
