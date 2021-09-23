@@ -563,6 +563,15 @@ export default function link(scope, elem, attrs, ctrl) {
     //   .text(function(d) { return d; });
     _.each(data, function (row) {
       console.log(row);
+      var tr = tbody.append('tr');
+      tr.append('td').text('span')
+        .style({
+          'background-color': row.color,
+          'height': "20px",
+          'width' : "20px",
+          'text-align': 'left'
+        });
+      tr.append('td').text(row.key);
     });
     // _.each(data.tableRows, function(rows, key) {
     //   _.each(rows, function(row, i) {
