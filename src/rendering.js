@@ -247,10 +247,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("path")
       .attr("d", arc)
-      // .attr("id",function(d, i) {
-      //   i = i + 1;
-      //   return "id-" +i;
-      // })
+      .attr("id",function(d, i) {
+        i = i + 1;
+        return "id-" +i;
+      })
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
@@ -297,32 +297,32 @@ export default function link(scope, elem, attrs, ctrl) {
       .text(d.number);
     });
 
-    console.log(d3.select('#text-label'));
-    var textPath = d3.selectAll('#text-label')
-      // .data(rawData)
-      // .enter()
-      .append('textPath');
-      // .attr("href", function (d, i) {
-      //   i = i + 1;
-      //   return "#id-" + i;
-      // })
-      // .text(function (d) {
-      //   console.log(d);
-      //     return d.parent;
-      // });
+    // console.log(d3.select('#text-label'));
+    // var textPath = d3.selectAll('#text-label')
+    //   // .data(rawData)
+    //   // .enter()
+    //   .append('textPath');
+    //   // .attr("href", function (d, i) {
+    //   //   i = i + 1;
+    //   //   return "#id-" + i;
+    //   // })
+    //   // .text(function (d) {
+    //   //   console.log(d);
+    //   //     return d.parent;
+    //   // });
     
-    console.log(textPath);
+    //console.log(textPath);
     //buildFixedTooltip()
 
-    path.forEach(element => {
-      // console.log(element);
+    // path.forEach(element => {
+    //   // console.log(element);
       
-      element.addEventListener("click", function () {
-          console.log("asdas");
-      });
-      // element.data(partition.nodes(hierarchy)).enter().append('a');
-      // console.log(element);
-    });
+    //   element.addEventListener("click", function () {
+    //       console.log("asdas");
+    //   });
+    //   // element.data(partition.nodes(hierarchy)).enter().append('a');
+    //   // console.log(element);
+    // });
     //path.append("a");
       // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
       //   buildFixedTooltip(d);
