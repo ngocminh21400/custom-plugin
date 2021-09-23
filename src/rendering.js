@@ -580,7 +580,7 @@ export default function link(scope, elem, attrs, ctrl) {
         if (row.parent.key != 'root') {
           text += row.parent.key + " - ";
         }
-        text += row.key;
+        text += row.key + ": " + row.value;
         return text;
       })
       .style({
