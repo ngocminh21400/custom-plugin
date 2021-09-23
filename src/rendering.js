@@ -256,10 +256,18 @@ export default function link(scope, elem, attrs, ctrl) {
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
-    
-    //var root = partition(data);
-    console.log(partition.nodes(hierarchy));
-    console.log(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
+    function partition_new(data) {
+      const root = d3.hierarchy(data)
+          .sum(d => d.value)
+          .sort((a, b) => b.value - a.value);
+      return d3.partition()
+          .size([2 * Math.PI, root.height + 1])
+        (root);
+    }
+    var root = partition_new(data);
+    console.log(root);
+    console.log(partition.(data));
+    console.log(root.descendants().filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10));
     var label = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .append("g")
       .attr("pointer-events", "none")
