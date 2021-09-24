@@ -366,7 +366,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("id", "label-" + ctrl.panel.id);
     console.log(gg);
 
-    var lb = gg
+    var lb = gg.selectAll("text")
       .data([1, 2, 3, 4, 5])
       .enter()
       .append("text");
