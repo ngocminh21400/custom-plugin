@@ -352,22 +352,23 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(");
     // console.log(partition);
     // console.log("partion(data)");
-     console.log(partition.nodes(hierarchy));
+    // console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
+
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     console.log(g);
-    
+
     const lb = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .style("user-select", "none")
     .selectAll("text")
-    .data(partition.nodes(hierarchy))
+    .data('partition.nodes(hierarchy)')
     .join("text")
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      .text(d => d.data.name);
+      .text("d => d.data.name");
     
     console.log(lb);
     //build legend
