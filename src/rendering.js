@@ -343,14 +343,14 @@ export default function link(scope, elem, attrs, ctrl) {
 
 
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
-    console.log("data");
-    console.log(ctrl.data);
-    console.log("hierarchy");
-    console.log(hierarchy.descendants().slice(1));
+    // console.log("data");
+    // console.log(ctrl.data);
+    // console.log("hierarchy");
+    // console.log(hierarchy.descendants().slice(1));
     // console.log("partion(");
     // console.log(partition);
     // console.log("partion(data)");
-    // console.log(partition.nodes(hierarchy));
+     console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
 
 
