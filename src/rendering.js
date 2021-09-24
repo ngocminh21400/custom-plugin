@@ -376,6 +376,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
+      .attr("transform",function(d) {
+        console.log(d);
+        return labelTransform(d.current);
+      })
       .text(function(d) {
         console.log(d);
         return d.key;
@@ -391,6 +395,12 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   // Functions
+  function labelTransform(d) {
+    const x = (d.x + d.dx) / 2 * 180 / Math.PI;
+    const y = (d.y + d.dy) / 2 * radius;
+    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+  }
+
   function createHierarchy(datapoints) {
     var nest = d3.nest();
     _.each(panel.nodeKeys, function(key, depth) {
