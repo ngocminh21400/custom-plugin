@@ -357,16 +357,18 @@ export default function link(scope, elem, attrs, ctrl) {
 
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
       .attr("id", "g-label-" + ctrl.panel.id);;
-    console.log(g);
+    //console.log(g);
 
     var gg = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .style("user-select", "none")
       .attr("id", "label-" + ctrl.panel.id);
-    console.log(gg);
+    //console.log(gg);
     var lb_data = partition.nodes(hierarchy);
-    console.log(lb_data);
+    
+    
+    //console.log(lb_data);
     var lb = gg.selectAll("text")
       .data(lb_data)
       .enter()
@@ -374,7 +376,9 @@ export default function link(scope, elem, attrs, ctrl) {
       //.attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      .text(d.key);
+      .text(function(d) {
+        console.log(d);
+      });
     
     console.log(lb);
     //build legend
