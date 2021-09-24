@@ -360,7 +360,7 @@ export default function link(scope, elem, attrs, ctrl) {
     function labelTransform(d) {
       const x = (d.x + d.dx) / 2 * 180 / Math.PI;
       const y = (d.y + d.dy) / 2 * radius;
-      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+      return `rotate(${x - 90}) translate(${y * 50}, 50) rotate(${x < 180 ? 0 : 180})`;
     }
 
  
