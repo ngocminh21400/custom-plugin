@@ -352,7 +352,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(");
     // console.log(partition);
     // console.log("partion(data)");
-    console.log(Array.isArray(partition.nodes(hierarchy)));
+    console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
 
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
@@ -369,11 +369,11 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb = gg.selectAll("text")
       .data([1, 2, 3, 4, 5])
       .enter(partition.nodes(hierarchy))
-      .append("text")
-      .attr("dy", "0.35em")
+      .append("text");
+      //.attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      .text(d.key);
+      // .text(d.key);
     
     console.log(lb);
     //build legend
