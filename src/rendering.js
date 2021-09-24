@@ -364,9 +364,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("user-select", "none");
     console.log(gg);
 
-    lb = gg.selectAll("text")
-    .data([1,2,3,4,5])
-    .append("text")
+    lb = gg.select('g').selectAll("text")
+      .data([1, 2, 3, 4, 5])
+      .enter()
+      .append("text")
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
