@@ -49,6 +49,8 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   function addSunburst() {
+    console.log('legend');
+    console.log(panel.legend);
     // Prepare data
     if (data.length === 0 || data[0].datapoints.length === 0) {
       return;
