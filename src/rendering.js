@@ -233,29 +233,27 @@ export default function link(scope, elem, attrs, ctrl) {
     var svg = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-      .on("click", function() {
+      .on("click", function () {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
-      })
-    .append('g')
-      .attr('id', "sunburst-g-" + ctrl.panel.id)
-      .attr("transform", "translate(" +
-        (margin.left + width  / 2) + ", " +
-        (margin.top  + height / 2) + ")"
-    );
-    
+      });
+    // .append('g')
+    //   .attr('id', "sunburst-g-" + ctrl.panel.id)
+    //   .attr("transform", "translate(" +
+    //     (margin.left + width  / 2) + ", " +
+    //     (margin.top  + height / 2) + ")"
+    // );
+    const g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
+    .attr('id', "sunburst-g-" + ctrl.panel.id)
+    .attr("id", "g-label-" + ctrl.panel.id);
 
-    let content = '<text><textPath>123456789</textPath></text>';
-    var i = 0;
-    var path = svg.selectAll("path")
+    // let content = '<text><textPath>123456789</textPath></text>';
+    // var i = 0;
+    var path = g.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
       .attr("d", arc)
-      .attr("id",function(d, i) {
-        i = i + 1;
-        return "id-" +i;
-      })
       .attr("stroke", "#fff")
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
@@ -360,8 +358,7 @@ export default function link(scope, elem, attrs, ctrl) {
       return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
     }
 
-    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
-      .attr("id", "g-label-" + ctrl.panel.id);;
+ 
     //console.log(g);
 
     var gg = g.append("g")
