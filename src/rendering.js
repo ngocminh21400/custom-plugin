@@ -357,9 +357,10 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
+    var radius_ = width / 6
     function labelTransform(d) {
       const x = (d.x + d.dx) / 2 * 180 / Math.PI;
-      const y = (d.y + d.dy) / 2 * radius;
+      const y = (d.y + d.dy) / 2 * radius_;
       return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(${x < 180 ? 0 : 180})`;
     }
 
