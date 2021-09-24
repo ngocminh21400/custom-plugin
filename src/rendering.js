@@ -366,7 +366,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("id", "label-" + ctrl.panel.id);
     console.log(gg);
 
-    var lb = d3.select("label-" + ctrl.panel.id)
+    var lb = gg
       // .data([1, 2, 3, 4, 5])
       // .enter()
       .append("text");
