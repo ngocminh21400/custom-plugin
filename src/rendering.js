@@ -355,16 +355,18 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
 
-    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
+    const g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     console.log(g);
 
-    const lb = g.append("g")
+    var gg = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
-      .style("user-select", "none")
-    .selectAll("text")
+      .style("user-select", "none");
+    console.log(gg);
+
+    lb = gg.selectAll("text")
     .data([1,2,3,4,5])
-    .join("text")
+    .append("text")
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
