@@ -354,6 +354,11 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
+    function labelTransform(d) {
+      const x = (d.x + d.dx) / 2 * 180 / Math.PI;
+      const y = (d.y + d.dy) / 2 * radius;
+      return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    }
 
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
       .attr("id", "g-label-" + ctrl.panel.id);;
@@ -377,7 +382,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
       .attr("transform",function(d) {
-        console.log(d);
+        console.log(labelTransform(d));
         return labelTransform(d);
       })
       .text(function(d) {
@@ -395,11 +400,7 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   // Functions
-  function labelTransform(d) {
-    const x = (d.x + d.dx) / 2 * 180 / Math.PI;
-    const y = (d.y + d.dy) / 2 * radius;
-    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-  }
+
 
   function createHierarchy(datapoints) {
     var nest = d3.nest();
