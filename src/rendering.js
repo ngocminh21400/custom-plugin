@@ -363,12 +363,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("text-anchor", "middle")
       .style("user-select", "none")
     .selectAll("text")
-    .data('partition.nodes(hierarchy)')
+    .data([1,2,3,4,5])
     .join("text")
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      .text("d => d.data.name");
+      .text(d);
     
     console.log(lb);
     //build legend
