@@ -370,11 +370,11 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb = gg.selectAll("text")
       .data(lb_data)
       .enter()
-      .append("text");
+      .append("text")
       //.attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      //.text(d.key);
+      .text(d.key);
     
     console.log(lb);
     //build legend
