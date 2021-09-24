@@ -352,7 +352,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(");
     // console.log(partition);
     // console.log("partion(data)");
-    console.log(isArray(partition.nodes(hierarchy)));
+    console.log(Array.isArray(partition.nodes(hierarchy)));
     // console.log(partition(ro));
 
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
