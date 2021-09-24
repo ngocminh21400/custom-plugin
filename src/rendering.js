@@ -359,7 +359,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log(partition(ro));
     var radius_ = width / 6
     function labelTransform(d) {
-      console.log(Math.PI);
+      console.log(radius_);
       const x = (d.x + d.dx) / 2 * 180 / Math.PI;
       const y = (d.y + d.dy) / 2 * radius_;
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
