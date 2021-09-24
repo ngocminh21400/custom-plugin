@@ -271,40 +271,39 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log(rawData);
     // console.log(partition.nodes(hierarchy));
     // console.log(hierarchy);
-    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     
-      console.log(g);
-    var label_ = g.append("g")
-      .attr("pointer-events", "none")
-      .attr("text-anchor", "middle")
-      .attr("font-size", 10)
-      .attr("font-family", "sans-serif")
-      .selectAll("text")
-      // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
-      // .join("text")
-      //   .attr("transform", function(d) {
-      //     const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-      //     const y = (d.y0 + d.y1) / 2;
-      //     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-      //   })
-        .attr("dy", "0.35em")
-      .text('d => d.data.name');
+
+    // var label = g.append("g")
+    //   .attr("pointer-events", "none")
+    //   .attr("text-anchor", "middle")
+    //   .attr("font-size", 10)
+    //   .attr("font-family", "sans-serif")
+    //   .selectAll("text")
+    //   // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
+    //   // .join("text")
+    //   //   .attr("transform", function(d) {
+    //   //     const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+    //   //     const y = (d.y0 + d.y1) / 2;
+    //   //     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    //   //   })
+    //     .attr("dy", "0.35em")
+    //   .text('d => d.data.name');
     
-    console.log(label_);
+    //console.log(label);
     
-    var text = svg.append('text').attr("id","text-label");
+    //var text = svg.append('text').attr("id","text-label");
     
     // text.forEach(element => {
       
     // });
-    i = 1;
-    rawData.forEach(function (d) {
-      //console.log(d);
-      var textPath = d3.selectAll('#text-label')
-      .append('textPath')
-      .attr("href","#id-"+i++)
-      .text(d.number);
-    });
+    // i = 1;
+    // rawData.forEach(function (d) {
+    //   //console.log(d);
+    //   var textPath = d3.selectAll('#text-label')
+    //   .append('textPath')
+    //   .attr("href","#id-"+i++)
+    //   .text(d.number);
+    // });
 
     // console.log(d3.select('#text-label'));
     // var textPath = d3.selectAll('#text-label')
@@ -337,11 +336,11 @@ export default function link(scope, elem, attrs, ctrl) {
       //   buildFixedTooltip(d);
       //   console.log("asdas");
       // });
-    var legent = d3.select("#sunburst-div-" + ctrl.panel.id).on("click", function () {
-      //console.log(ctrl.data);
-        buildFixedTooltip(d);
-        //console.log("asdas");
-    });
+    // var legent = d3.select("#sunburst-div-" + ctrl.panel.id).on("click", function () {
+    //   //console.log(ctrl.data);
+    //     buildFixedTooltip(d);
+    //     //console.log("asdas");
+    // });
     //console.log(legent);
 
 
@@ -355,7 +354,10 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
      console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
-    const label = svg.append("g")
+    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
+    console.log(g);
+    
+    const lb = svg.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .style("user-select", "none")
@@ -366,9 +368,14 @@ export default function link(scope, elem, attrs, ctrl) {
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
       .text(d => d.data.name);
-
+    
+    console.log(lb);
     //build legend
     buildFixedTooltip(partition.nodes(hierarchy));
+
+
+
+
   }
 
   // Functions
