@@ -355,13 +355,15 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
 
-    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
+    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
+      .attr("id", "g-label-" + ctrl.panel.id);;
     console.log(g);
 
     var gg = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
-      .style("user-select", "none");
+      .style("user-select", "none")
+      .attr("id", "label-" + ctrl.panel.id);
     console.log(gg);
 
     lb = gg.select('g')
