@@ -378,7 +378,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // .attr("transform", d => labelTransform(d.current))
       .attr("transform",function(d) {
         console.log(d);
-        return labelTransform(d.current);
+        return labelTransform(d);
       })
       .text(function(d) {
         console.log(d);
