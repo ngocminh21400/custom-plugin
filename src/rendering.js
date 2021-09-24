@@ -373,11 +373,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      //.attr("dy", "0.35em")
+      .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
       .text(function(d) {
         console.log(d);
+        return d.key;
       });
     
     console.log(lb);
