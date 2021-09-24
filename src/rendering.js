@@ -274,7 +274,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     
       console.log(g);
-    var label = g.append("g")
+    var label_ = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .attr("font-size", 10)
@@ -290,7 +290,7 @@ export default function link(scope, elem, attrs, ctrl) {
         .attr("dy", "0.35em")
       .text('d => d.data.name');
     
-    console.log(label);
+    console.log(label_);
     
     var text = svg.append('text').attr("id","text-label");
     
