@@ -346,12 +346,12 @@ export default function link(scope, elem, attrs, ctrl) {
     console.log("data");
     console.log(ctrl.data);
     console.log("hierarchy");
-    console.log(hierarchy);
-    console.log("partion(");
-    console.log(partition);
-    console.log("partion(data)");
-    console.log(partition.nodes(hierarchy));
-    console.log(partition(ro));
+    console.log(hierarchy.descendants().slice(1));
+    // console.log("partion(");
+    // console.log(partition);
+    // console.log("partion(data)");
+    // console.log(partition.nodes(hierarchy));
+    // console.log(partition(ro));
 
 
     //build legend
