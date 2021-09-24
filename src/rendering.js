@@ -367,8 +367,8 @@ export default function link(scope, elem, attrs, ctrl) {
     console.log(gg);
 
     var lb = d3.select("label-" + ctrl.panel.id)
-      .data([1, 2, 3, 4, 5])
-      .enter()
+      // .data([1, 2, 3, 4, 5])
+      // .enter()
       .append("text");
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
