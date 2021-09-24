@@ -382,6 +382,7 @@ export default function link(scope, elem, attrs, ctrl) {
         console.log(labelTransform(d));
         return labelTransform(d);
       })
+      .style("color","white")
       .text(function(d) {
         console.log(d);
         return d.key;
