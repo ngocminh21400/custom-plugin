@@ -357,7 +357,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
-    var radius_ = width ;
+    var radius_ = width /1.5;
     function labelTransform(d) {
       //console.log(radius_);
       const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
