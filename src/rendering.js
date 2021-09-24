@@ -249,7 +249,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
     // let content = '<text><textPath>123456789</textPath></text>';
     // var i = 0;
-    var path = g.selectAll("path")
+    var g_path = g.append("g");
+    var path = g_path.selectAll("path")
       .data(partition.nodes(hierarchy))
       .enter()
       .append("path")
@@ -361,7 +362,7 @@ export default function link(scope, elem, attrs, ctrl) {
  
     //console.log(g);
 
-    var gg = g.append("g")
+    var g_lable = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .style("user-select", "none")
@@ -371,7 +372,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
     //console.log(lb_data);
-    var lb = gg.selectAll("text")
+    var lb = g_lable.selectAll("text")
       .data(lb_data)
       .enter()
       .append("text")
