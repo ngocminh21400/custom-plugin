@@ -367,13 +367,13 @@ export default function link(scope, elem, attrs, ctrl) {
     console.log(gg);
 
     var lb = gg.selectAll("text")
-      .data([1, 2, 3, 4, 5])
-      .enter(partition.nodes(hierarchy))
-      .append("text");
-      //.attr("dy", "0.35em")
+      .data(partition.nodes(hierarchy))
+      .enter()
+      .append("text")
+      .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      // .text(d.key);
+      .text(d.key);
     
     console.log(lb);
     //build legend
