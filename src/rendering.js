@@ -355,7 +355,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
 
-    const g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
+    var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     console.log(g);
 
     var gg = g.append("g")
@@ -364,7 +364,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("user-select", "none");
     console.log(gg);
 
-    lb = gg.select('g').selectAll("text")
+    lb = gg.select('g')
       .data([1, 2, 3, 4, 5])
       .enter()
       .append("text")
