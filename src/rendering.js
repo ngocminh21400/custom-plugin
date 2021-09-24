@@ -26,6 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log(panel);
       // console.log(data);
       addSunburst();
+
       
     }
   }
@@ -49,8 +50,8 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   function addSunburst() {
-    console.log('legend');
-    console.log(panel.legend);
+    // console.log('legend');
+    // console.log(panel.legend);
     // Prepare data
     if (data.length === 0 || data[0].datapoints.length === 0) {
       return;
@@ -342,7 +343,10 @@ export default function link(scope, elem, attrs, ctrl) {
 
 
     //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
-
+    console.log("data");
+    console.log(ctrl.data);
+    console.log("hierarchy");
+    console.log(hierarchy);
 
     //build legend
     buildFixedTooltip(partition.nodes(hierarchy));
@@ -546,9 +550,9 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   function buildFixedTooltip(data) {
-    console.log(data);
+    //console.log(data);
     var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
-    console.log(legend);
+    //console.log(legend);
     legend.selectAll('table').remove();
     legend.selectAll('p').remove();
 
@@ -564,7 +568,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
     _.each(data, function (row) {
-      console.log(row);
+      //console.log(row);
       if (row.key == "root") {
         return;
       }
@@ -608,16 +612,7 @@ export default function link(scope, elem, attrs, ctrl) {
     //   });
     // });
 
-    // Link
-    if (panel.linkTemplate) {
-      var tooltipHref = data.tooltipHref.replace(/\/\$\d*/g, '');
-
-      tooltip.append('p')
-        .append('a')
-        .attr('href', tooltipHref)
-        .attr('target', '_blank')
-        .text('[ link ]');
-    }
+    
   }
 }
 
