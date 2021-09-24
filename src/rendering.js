@@ -243,9 +243,13 @@ export default function link(scope, elem, attrs, ctrl) {
     //     (margin.left + width  / 2) + ", " +
     //     (margin.top  + height / 2) + ")"
     // );
-    const g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`)
-    .attr('id', "sunburst-g-" + ctrl.panel.id)
-    .attr("id", "g-label-" + ctrl.panel.id);
+    const g = svg.append("g")
+      .attr("transform", "translate(" +
+        (margin.left + width  / 2) + ", " +
+        (margin.top  + height / 2) + ")"
+      )
+      .attr('id', "sunburst-g-" + ctrl.panel.id)
+      .attr("id", "g-label-" + ctrl.panel.id);
 
     // let content = '<text><textPath>123456789</textPath></text>';
     // var i = 0;
