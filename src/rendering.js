@@ -358,7 +358,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var g = svg.append("g").attr("transform", `translate(${width / 2},${width / 2})`);
     console.log(g);
 
-    const lb = svg.append("g")
+    const lb = g.append("g")
       .attr("pointer-events", "none")
       .attr("text-anchor", "middle")
       .style("user-select", "none")
