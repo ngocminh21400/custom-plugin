@@ -366,14 +366,14 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("id", "label-" + ctrl.panel.id);
     console.log(gg);
 
-    lb = d3.select("label-" + ctrl.panel.id)
-      .data([1, 2, 3, 4, 5])
-      .enter()
-      .append("text")
+    lb = d3.select("label-" + ctrl.panel.id);
+      // .data([1, 2, 3, 4, 5])
+      // .enter()
+      //.append("text")
       // .attr("dy", "0.35em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
-      .text(d);
+      //.text(d);
     
     console.log(lb);
     //build legend
