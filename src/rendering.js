@@ -357,15 +357,13 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
-    var radius_ = width / 6
+    var radius_ = width / 2;
     function labelTransform(d) {
-      console.log(radius_);
+      //console.log(radius_);
       const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       const y = ((d.y + d.dy) / 2) * radius_;
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
       
-      console.log("y" + y);
-      console.log("x" + x);
 
       return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(${x < 180 ? 0 : 180})`;
     }
@@ -396,7 +394,7 @@ export default function link(scope, elem, attrs, ctrl) {
       })
       .style("fill","white")
       .text(function(d) {
-        console.log(d);
+        //console.log(d);
         return d.key;
       });
     
