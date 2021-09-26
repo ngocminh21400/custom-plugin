@@ -363,8 +363,10 @@ export default function link(scope, elem, attrs, ctrl) {
       
       const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       const y = ((d.y + d.dy) / 2) * radius;
+
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
-      
+      console.log("y:" + d.y + " - " + "dy: " + d.dy);
+
 
       return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(${x < 180 ? 0 : 180})`;
     }
