@@ -289,10 +289,15 @@ export default function link(scope, elem, attrs, ctrl) {
       //var y = (d.y + d.dy) / 2 * radius;
       var r =  height + margin.top + margin.bottom;
 
-      console.log(r);
+      //console.log(r);
      // console.log( height + margin.top + margin.bottom);
-      var x = (d.x + d.dx) * r;
-
+      if (((d.x + (d.dx / 2))) < 0.5) {
+        var x = (d.x + d.dx) * r;
+      } else {
+        var x = (d.x + d.dx) * r * (-1);
+      }
+      //console.log(x);
+      console.log((d.x + d.dx));
       var y = Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * r;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       return ` translate(${x}, ${y}) `;
