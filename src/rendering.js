@@ -197,10 +197,11 @@ export default function link(scope, elem, attrs, ctrl) {
 
     var arc = d3.svg.arc()
       .startAngle(function (d) {
-        console.log(Math.max(0, Math.min(2 * Math.PI, x(d.x))));
+        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
-      .endAngle(function(d) {
+      .endAngle(function (d) {
+        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
       })
       .innerRadius(function(d) {
