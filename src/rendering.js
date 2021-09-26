@@ -201,13 +201,14 @@ export default function link(scope, elem, attrs, ctrl) {
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
       .endAngle(function (d) {
-        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))));
+        console.log("end" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
       })
       .innerRadius(function(d) {
         return Math.max(0, y(d.y));
       })
-      .outerRadius(function(d) {
+      .outerRadius(function (d) {
+        console.log("outer" + Math.max(0, y(d.y + d.dy)));
         return Math.max(0, y(d.y + d.dy));
       });
     
