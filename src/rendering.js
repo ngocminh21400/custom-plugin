@@ -197,18 +197,18 @@ export default function link(scope, elem, attrs, ctrl) {
 
     var arc = d3.svg.arc()
       .startAngle(function (d) {
-        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x))));
+        //console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
       .endAngle(function (d) {
-        console.log("end" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))));
+        //console.log("end" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
       })
       .innerRadius(function(d) {
         return Math.max(0, y(d.y));
       })
       .outerRadius(function (d) {
-        console.log("outer" + Math.max(0, y(d.y + d.dy)));
+        //console.log("outer" + Math.max(0, y(d.y + d.dy)));
         return Math.max(0, y(d.y + d.dy));
       });
     
@@ -285,7 +285,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log("x:" + d.x + " - " + "dx: " + d.dx);
       // console.log("y:" + d.y + " - " + "dy: " + d.dy);
       var x = width / 2;
-      var y = d.dy;
+      var y = (d.y0 + d.y1) / 2 * radius;
       console.log(d.key);
       console.log(d.dy);
       return ` translate(${x}, ${y}) `;
