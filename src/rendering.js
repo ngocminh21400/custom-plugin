@@ -400,6 +400,9 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("fill","white")
       .text(function(d) {
         //console.log(d);
+        if (d.key == 'root') {
+          return;
+        }
         return d.key;
       });
     
