@@ -282,9 +282,9 @@ export default function link(scope, elem, attrs, ctrl) {
       // var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       // var y = ((d.y + d.dy) / 2) * radius;
       console.log(d.key);
-      console.log("x:" + d.x + " - " + "dx: " + d.dx);
-      console.log("y:" + d.y + " - " + "dy: " + d.dy);
-      console.log("-----------------------");
+      //console.log("x:" + d.x + " - " + "dx: " + d.dx);
+      //console.log("y:" + d.y + " - " + "dy: " + d.dy);
+      //console.log("-----------------------");
       //var x = (width/2) * d.y;
       //var y = (d.y + d.dy) / 2 * radius;
 
@@ -294,7 +294,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var x = (width/2) * d.y;
       }
 
-      var y = Math.sin(((d.x + d.dx)/2) * 2 * Math.PI)
+      var y = Math.sin(((d.x + d.dx) / 2) * 2 * Math.PI) * x;
       //console.log(d.dy);
       return ` translate(${x}, ${y}) `;
     }
