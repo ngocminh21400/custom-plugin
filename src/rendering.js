@@ -370,7 +370,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("y:" + d.y + " - " + "dy: " + d.dy);
 
 
-      return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(90)`;
+      return ` translate(${y + 80}, 50) rotate(90)`;
     }
 
  
