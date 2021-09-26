@@ -196,12 +196,10 @@ export default function link(scope, elem, attrs, ctrl) {
     var y = d3.scale.sqrt().range([0, radius]);
 
     var arc = d3.svg.arc()
-      .startAngle(function (d) {
-        console.log(x(d.x));
+      .startAngle(function(d) {
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
-      .endAngle(function (d) {
-        console.log(x(d.x + d.dx));
+      .endAngle(function(d) {
         return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
       })
       .innerRadius(function(d) {
@@ -365,8 +363,8 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(radius);
     function labelTransform(d) {
       
-      const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
-      const y = ((d.y + d.dy) / 2) * radius;
+      var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
+      var y = ((d.y + d.dy) / 2) * radius;
 
       //console.log("x:" + d.x + " - " + "dx: " + d.dx);
       //console.log("y:" + d.y + " - " + "dy: " + d.dy);
