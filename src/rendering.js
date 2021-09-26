@@ -287,12 +287,9 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("-----------------------");
       //var x = (width/2) * d.y;
       //var y = (d.y + d.dy) / 2 * radius;
-      var r = width / 3;
-      if (d.x >= 0.5) {
-        var x = r * d.y * (-1);
-      } else {
-        var x = r * d.y;
-      }
+      var r = svg.height();
+      console.log(r);
+      var x = (d.x + d.dx) * r;
 
       var y = Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * r;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
