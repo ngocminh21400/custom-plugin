@@ -370,7 +370,7 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("y:" + d.y + " - " + "dy: " + d.dy);
       var x = width / 2;
       var y = d.dy;
-      console.log(width);
+      console.log(d.key);
       return ` translate(${x}, ${y}) `;
     }
 
