@@ -370,7 +370,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("y:" + d.y + " - " + "dy: " + d.dy);
 
 
-      return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(${x < 180 ? 0 : 180})`;
+      return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(90)`;
     }
 
  
@@ -390,7 +390,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      .attr("dy", "0.35em")
+      .attr("dy", "5em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
       .attr("transform",function(d) {
