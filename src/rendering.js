@@ -287,7 +287,8 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("-----------------------");
       //var x = (width/2) * d.y;
       //var y = (d.y + d.dy) / 2 * radius;
-      var r = svg.height();
+      var r = d3.select("#sunburst-svg-" + ctrl.panel.id).height();
+
       console.log(r);
       var x = (d.x + d.dx) * r;
 
