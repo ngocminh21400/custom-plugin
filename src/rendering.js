@@ -192,21 +192,22 @@ export default function link(scope, elem, attrs, ctrl) {
       //buildFixedTooltip(tooltipData);
     };
 
-    // var x = d3.scale.linear().range([0, 2 * Math.PI]);
-    // var y = d3.scale.sqrt().range([0, radius]);
-
+    var x = d3.scale.linear().range([0, 2 * Math.PI]);
+    var y = d3.scale.sqrt().range([0, radius]);
+    console.log(x);
+    console.log(y);
     var arc = d3.svg.arc()
       .startAngle(function(d) {
-        return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
+        return Math.max(0, Math.min(2 * Math.PI, x*(d.x)));
       })
       .endAngle(function(d) {
-        return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
+        return Math.max(0, Math.min(2 * Math.PI, x*(d.x + d.dx)));
       })
       .innerRadius(function(d) {
-        return Math.max(0, y(d.y));
+        return Math.max(0, y*(d.y));
       })
       .outerRadius(function(d) {
-        return Math.max(0, y(d.y + d.dy));
+        return Math.max(0, y*(d.y + d.dy));
       });
     
     
