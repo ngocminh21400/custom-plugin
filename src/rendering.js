@@ -294,8 +294,8 @@ export default function link(scope, elem, attrs, ctrl) {
         var x = r * d.y;
       }
 
-      var y = Math.cos(((d.x + d.dx)) * 2 * Math.PI) * r;
-      console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
+      var y = Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * r;
+      //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       return ` translate(${x}, ${y}) `;
     }
 
