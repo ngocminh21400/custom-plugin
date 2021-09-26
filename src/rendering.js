@@ -285,13 +285,16 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
       console.log("y:" + d.y + " - " + "dy: " + d.dy);
       console.log("-----------------------");
-      var x = (width/2) * d.y;
-      var y = (d.y + d.dy) / 2 * radius;
+      //var x = (width/2) * d.y;
+      //var y = (d.y + d.dy) / 2 * radius;
+
       if (d.x >= 0.5) {
         var x = (width/2) * d.y * (-1);
       } else {
         var x = (width/2) * d.y;
       }
+
+      var y = Math.sin(((d.x + d.dx)/2) * 2 * Math.PI)
       //console.log(d.dy);
       return ` translate(${x}, ${y}) `;
     }
