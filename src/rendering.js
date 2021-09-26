@@ -285,7 +285,7 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
       console.log("y:" + d.y + " - " + "dy: " + d.dy);
       console.log("-----------------------");
-      var x = width * d.dy;
+      var x = width * d.y;
       var y = (d.y + d.dy) / 2 * radius;
       //console.log(d.dy);
       return ` translate(${x}, ${y}) `;
