@@ -192,8 +192,8 @@ export default function link(scope, elem, attrs, ctrl) {
       //buildFixedTooltip(tooltipData);
     };
 
-    var x = d3.scale.linear().range([0, 2 * Math.PI]);
-    var y = d3.scale.sqrt().range([0, radius]);
+    // var x = d3.scale.linear().range([0, 2 * Math.PI]);
+    // var y = d3.scale.sqrt().range([0, radius]);
 
     var arc = d3.svg.arc()
       .startAngle(function(d) {
@@ -208,7 +208,9 @@ export default function link(scope, elem, attrs, ctrl) {
       .outerRadius(function(d) {
         return Math.max(0, y(d.y + d.dy));
       });
-
+    
+    
+    
     var arcTween = function(d) {
       var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]);
       var yd = d3.interpolate(y.domain(), [d.y, 1]);
@@ -358,14 +360,14 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
     //var radius_ = width /1.5;
-    console.log(radius);
+    //console.log(radius);
     function labelTransform(d) {
       
       const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       const y = ((d.y + d.dy) / 2) * radius;
 
-      console.log("x:" + d.x + " - " + "dx: " + d.dx);
-      console.log("y:" + d.y + " - " + "dy: " + d.dy);
+      //console.log("x:" + d.x + " - " + "dx: " + d.dx);
+      //console.log("y:" + d.y + " - " + "dy: " + d.dy);
 
 
       return `rotate(${x - 90}) translate(${y + 80}, 50) rotate(${x < 180 ? 0 : 180})`;
