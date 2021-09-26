@@ -287,6 +287,11 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("-----------------------");
       var x = (width/2) * d.y;
       var y = (d.y + d.dy) / 2 * radius;
+      if (d.x >= 0.5) {
+        var x = (width/2) * d.y * (-1);
+      } else {
+        var x = (width/2) * d.y;
+      }
       //console.log(d.dy);
       return ` translate(${x}, ${y}) `;
     }
