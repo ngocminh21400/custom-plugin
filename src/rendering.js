@@ -284,7 +284,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
       // console.log("x:" + d.x + " - " + "dx: " + d.dx);
       // console.log("y:" + d.y + " - " + "dy: " + d.dy);
-      var x = width / 2;
+      var x = width / 3;
       var y = (d.y + d.dy) / 2 * radius;
       console.log(d.key);
       console.log(d.dy);
