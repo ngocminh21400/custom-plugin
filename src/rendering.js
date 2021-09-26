@@ -363,14 +363,14 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(radius);
     function labelTransform(d) {
       
-      var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
-      var y = ((d.y + d.dy) / 2) * radius;
+      // var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
+      // var y = ((d.y + d.dy) / 2) * radius;
 
-      //console.log("x:" + d.x + " - " + "dx: " + d.dx);
-      //console.log("y:" + d.y + " - " + "dy: " + d.dy);
-
-
-      return ` translate(${y + 80}, 50) `;
+      console.log("x:" + d.x + " - " + "dx: " + d.dx);
+      console.log("y:" + d.y + " - " + "dy: " + d.dy);
+      var x = width / 2;
+      console.log(width);
+      return ` translate(${x}, ${y}) `;
     }
 
  
@@ -390,7 +390,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      .attr("dy", "5em")
+      //.attr("dy", "5em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
       .attr("transform",function(d) {
