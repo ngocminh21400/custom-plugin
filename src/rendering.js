@@ -357,11 +357,12 @@ export default function link(scope, elem, attrs, ctrl) {
     // console.log("partion(data)");
     //console.log(partition.nodes(hierarchy));
     // console.log(partition(ro));
-    var radius_ = width /1.5;
+    //var radius_ = width /1.5;
+    console.log(radius);
     function labelTransform(d) {
-      //console.log(radius_);
+      
       const x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
-      const y = ((d.y + d.dy) / 2) * radius_;
+      const y = ((d.y + d.dy) / 2) * radius;
       console.log("x:" + d.x + " - " + "dx: " + d.dx);
       
 
