@@ -291,7 +291,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
       //console.log(r);
      // console.log( height + margin.top + margin.bottom);
-      if (((d.y + (d.dy / 2))) < 0.5) {
+      if (((d.x + (d.dx / 2))) < 0.5) {
         var x = (d.y + d.dy) * r;
       } else {
         var x = (d.y + d.dy) * r * (-1);
