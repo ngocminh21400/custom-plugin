@@ -201,7 +201,7 @@ export default function link(scope, elem, attrs, ctrl) {
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
       .endAngle(function (d) {
-        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
+        console.log("start" + Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx)));
       })
       .innerRadius(function(d) {
