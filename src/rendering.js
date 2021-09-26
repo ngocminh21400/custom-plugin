@@ -196,7 +196,8 @@ export default function link(scope, elem, attrs, ctrl) {
     var y = d3.scale.sqrt().range([0, radius]);
 
     var arc = d3.svg.arc()
-      .startAngle(function(d) {
+      .startAngle(function (d) {
+        console.log(Math.max(0, Math.min(2 * Math.PI, x(d.x))));
         return Math.max(0, Math.min(2 * Math.PI, x(d.x)));
       })
       .endAngle(function(d) {
@@ -273,94 +274,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     
   // new commit
-    // console.log(rawData);
-    // console.log(partition.nodes(hierarchy));
-    // console.log(hierarchy);
-    
-
-    // var label = g.append("g")
-    //   .attr("pointer-events", "none")
-    //   .attr("text-anchor", "middle")
-    //   .attr("font-size", 10)
-    //   .attr("font-family", "sans-serif")
-    //   .selectAll("text")
-    //   // .data(partition.nodes(hierarchy).filter(d => d.depth && (d.y0 + d.y1) / 2 * (d.x1 - d.x0) > 10))
-    //   // .join("text")
-    //   //   .attr("transform", function(d) {
-    //   //     const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-    //   //     const y = (d.y0 + d.y1) / 2;
-    //   //     return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-    //   //   })
-    //     .attr("dy", "0.35em")
-    //   .text('d => d.data.name');
-    
-    //console.log(label);
-    
-    //var text = svg.append('text').attr("id","text-label");
-    
-    // text.forEach(element => {
-      
-    // });
-    // i = 1;
-    // rawData.forEach(function (d) {
-    //   //console.log(d);
-    //   var textPath = d3.selectAll('#text-label')
-    //   .append('textPath')
-    //   .attr("href","#id-"+i++)
-    //   .text(d.number);
-    // });
-
-    // console.log(d3.select('#text-label'));
-    // var textPath = d3.selectAll('#text-label')
-    //   // .data(rawData)
-    //   // .enter()
-    //   .append('textPath');
-    //   // .attr("href", function (d, i) {
-    //   //   i = i + 1;
-    //   //   return "#id-" + i;
-    //   // })
-    //   // .text(function (d) {
-    //   //   console.log(d);
-    //   //     return d.parent;
-    //   // });
-    
-    //console.log(textPath);
-    //buildFixedTooltip()
-
-    // path.forEach(element => {
-    //   // console.log(element);
-      
-    //   element.addEventListener("click", function () {
-    //       console.log("asdas");
-    //   });
-    //   // element.data(partition.nodes(hierarchy)).enter().append('a');
-    //   // console.log(element);
-    // });
-    //path.append("a");
-      // document.getElementById("#sunburst-div-" + ctrl.panel.id).addEventListener("click", function () {
-      //   buildFixedTooltip(d);
-      //   console.log("asdas");
-      // });
-    // var legent = d3.select("#sunburst-div-" + ctrl.panel.id).on("click", function () {
-    //   //console.log(ctrl.data);
-    //     buildFixedTooltip(d);
-    //     //console.log("asdas");
-    // });
-    //console.log(legent);
-
-
-    //var backgroud = d3.select(".sunburst").on("mouseover", mouseover);
-    // console.log("data");
-    // console.log(ctrl.data);
-    // console.log("hierarchy");
-    // console.log(hierarchy.descendants().slice(1));
-    // console.log("partion(");
-    // console.log(partition);
-    // console.log("partion(data)");
-    //console.log(partition.nodes(hierarchy));
-    // console.log(partition(ro));
-    //var radius_ = width /1.5;
-    //console.log(radius);
+   
     function labelTransform(d) {
       
       // var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
@@ -408,7 +322,7 @@ export default function link(scope, elem, attrs, ctrl) {
         return d.key;
       });
     
-    console.log(lb);
+    //console.log(lb);
     //build legend
     buildFixedTooltip(partition.nodes(hierarchy));
 
