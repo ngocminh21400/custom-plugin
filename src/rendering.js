@@ -287,7 +287,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("-----------------------");
       //var x = (width/2) * d.y;
       //var y = (d.y + d.dy) / 2 * radius;
-      var r =  height + margin.top + margin.bottom;
+      var r =  (height + margin.top + margin.bottom) / 2;
 
       //console.log(r);
      // console.log( height + margin.top + margin.bottom);
