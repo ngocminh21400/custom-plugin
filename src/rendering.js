@@ -366,11 +366,12 @@ export default function link(scope, elem, attrs, ctrl) {
       // var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       // var y = ((d.y + d.dy) / 2) * radius;
 
-      console.log("x:" + d.x + " - " + "dx: " + d.dx);
-      console.log("y:" + d.y + " - " + "dy: " + d.dy);
+      // console.log("x:" + d.x + " - " + "dx: " + d.dx);
+      // console.log("y:" + d.y + " - " + "dy: " + d.dy);
       var x = width / 2;
       var y = d.dy;
       console.log(d.key);
+      console.log(d.dy);
       return ` translate(${x}, ${y}) `;
     }
 
