@@ -344,7 +344,7 @@ export default function link(scope, elem, attrs, ctrl) {
         var h = height + margin.top + margin.bottom;
         var w = width + margin.left + margin.right;
         var diff = Math.abs(h - w);
-        return (diff / 2) + "px";
+        return "-"+(diff / 2) + "px";
       })
       //.attr("dy", "3.5em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
