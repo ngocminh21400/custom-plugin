@@ -324,7 +324,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      .attr("dx", "-3.5em")
+      .attr("dx", "-2em")
       //.attr("dy", "3.5em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
