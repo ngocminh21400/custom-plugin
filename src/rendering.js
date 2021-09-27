@@ -287,17 +287,18 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log("-----------------------");
       //var x = (width/2) * d.y;
       //var y = (d.y + d.dy) / 2 * radius;
-      var r =  (height + margin.top + margin.bottom) / 2;
+      var r =  ((height + margin.top + margin.bottom) / 2)* 0.9; 
 
       //console.log(r);
      // console.log( height + margin.top + margin.bottom);
-      if (((d.x + (d.dx / 2))) < 0.5) {
-        var x = (d.y + d.dy) * r;
-      } else {
-        var x = (d.y + d.dy) * r * (-1);
-      }
+      // if (((d.x + (d.dx / 2))) < 0.5) {
+      //   var x = (d.y + d.dy) * r;
+      // } else {
+      //   var x = (d.y + d.dy) * r * (-1);
+      // }
+      var x = (-1) * Math.sin((d.y + d.dy)* 2 * Math.PI) * r;
       //console.log(x);
-      console.log((d.y + d.dy));
+      //console.log((d.y + d.dy) * 2 * Math.PI);
       var y = (-1) * Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * x;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
