@@ -339,7 +339,13 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      .attr("dx", "-2em")
+      .attr("dx", function() {
+
+        var h = height + margin.top + margin.bottom;
+        var w = width + margin.left + margin.right;
+        var diff = Math.abs(h - w);
+        return (diff / 2) + "px";
+      })
       //.attr("dy", "3.5em")
       // .attr("fill-opacity", d => +labelVisible(d.current))
       // .attr("transform", d => labelTransform(d.current))
