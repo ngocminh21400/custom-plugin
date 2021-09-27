@@ -301,7 +301,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var y = (-1) * Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * x;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
-      return `rotate(${rt - 90}) translate(${x}, ${y}) rotate(${rt < 180 ? 0 : 180})`;
+      return ` translate(${x}, ${y})`;
     }
 
  
