@@ -298,7 +298,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //   var x = (d.y + d.dy) * r * (-1);
       // }
       
-      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI);
+      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
       if (d.key == 'root') {
         return ` translate(0 ,0)`;
       }
@@ -306,10 +306,10 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("sin: " + Math.sin(angle));
       console.log("cos: " + Math.cos(angle));
       console.log("r: "+r);
-      var x = (1) * Math.sin(angle) * r;
+      var x = (-1) * Math.cos(angle) * r;
       //console.log(x);
       //console.log((d.y + d.dy) * 2 * Math.PI);
-      var y = (1) * Math.cos(angle) * r;
+      var y = (1) * Math.sin(angle) * r;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       //const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
       
