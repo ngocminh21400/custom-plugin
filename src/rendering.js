@@ -296,10 +296,12 @@ export default function link(scope, elem, attrs, ctrl) {
       // } else {
       //   var x = (d.y + d.dy) * r * (-1);
       // }
-      var x = (-1) * Math.sin(((d.x + (d.dx / 2))) * 2 * Math.PI) * r;
+      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) - (0.5 * Math.PI);
+
+      var x = (-1) * Math.sin(angle) * r;
       //console.log(x);
       //console.log((d.y + d.dy) * 2 * Math.PI);
-      var y = (-1) * Math.cos(((d.x + (d.dx / 2))) * 2 * Math.PI) * x;
+      var y = (-1) * Math.cos(angle) * x;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
       return ` translate(${x}, ${y})`;
