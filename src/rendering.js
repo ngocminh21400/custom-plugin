@@ -309,7 +309,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var x = (-1) * Math.cos(angle) * r;
       //console.log(x);
       //console.log((d.y + d.dy) * 2 * Math.PI);
-      var y = (1) * Math.sin(angle) * r;
+      var y = (-1) * Math.sin(angle) * r;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       //const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
       
