@@ -298,7 +298,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // }
       
       var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (1 * Math.PI);
-      console.log(radians_to_degrees(angle));
+      console.log(radians_to_degrees( Math.PI));
 
       var x = (-1) * Math.sin(angle) * r;
       //console.log(x);
@@ -308,7 +308,7 @@ export default function link(scope, elem, attrs, ctrl) {
       const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
       return ` translate(${x}, ${y})`;
     }
-    
+
     function radians_to_degrees(radians)
     {
       var pi = Math.PI;
