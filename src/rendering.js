@@ -357,9 +357,10 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("fill","white")
       .text(function(d) {
         //console.log(d);
-        // if (d.key == 'root') {
-        //   return;
-        // }
+        if (d.key == 'root' || d.value == 0) {
+          return;
+        }
+
         return d.key;
       });
     
