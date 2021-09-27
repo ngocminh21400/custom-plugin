@@ -306,7 +306,7 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log("sin: " + Math.sin(angle));
       console.log("cos: " + Math.cos(angle));
       console.log("r: "+r);
-      var x = (-1) * Math.cos(angle) * r;
+      var x = (-1) * Math.cos(angle) * r * (d.y + d.dy);
       //console.log(x);
       //console.log((d.y + d.dy) * 2 * Math.PI);
       var y = (-1) * Math.sin(angle) * r;
