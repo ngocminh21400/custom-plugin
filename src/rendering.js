@@ -296,7 +296,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // } else {
       //   var x = (d.y + d.dy) * r * (-1);
       // }
-      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
+      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (1 * Math.PI);
 
       var x = (-1) * Math.sin(angle) * r;
       //console.log(x);
