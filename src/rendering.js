@@ -310,7 +310,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //console.log((d.y + d.dy) * 2 * Math.PI);
       var y = (1) * Math.cos(angle) * x;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
-      const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
+      //const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
       
       return ` translate(${x}, ${y})`;
     }
