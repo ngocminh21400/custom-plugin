@@ -281,6 +281,7 @@ export default function link(scope, elem, attrs, ctrl) {
       
       // var x = (((d.x + d.dx) / 2) * 180 )/ Math.PI;
       // var y = ((d.y + d.dy) / 2) * radius;
+      
       console.log(d.key);
       //console.log("x:" + d.x + " - " + "dx: " + d.dx);
       //console.log("y:" + d.y + " - " + "dy: " + d.dy);
@@ -297,7 +298,10 @@ export default function link(scope, elem, attrs, ctrl) {
       //   var x = (d.y + d.dy) * r * (-1);
       // }
       
-      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) ;
+      var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI);
+      if (d.key == 'root') {
+        return ` translate(0 ,0)`;
+      }
       console.log(radians_to_degrees(angle));
       console.log("sin: " + Math.sin(angle));
       console.log("cos: "+ Math.cos(angle));
@@ -307,6 +311,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var y = (-1) * Math.cos(angle) * x;
       //console.log(Math.cos(((d.x + d.dx) / 2) * 2 * Math.PI) );
       const rt = (d.x + d.dx) / 2 * 180 / Math.PI;
+      
       return ` translate(${x}, ${y})`;
     }
     
