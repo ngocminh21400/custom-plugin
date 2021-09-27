@@ -305,7 +305,7 @@ export default function link(scope, elem, attrs, ctrl) {
       console.log(radians_to_degrees(angle));
       console.log("sin: " + Math.sin(angle));
       console.log("cos: "+ Math.cos(angle));
-      var x = (-1) * Math.sin(angle) * r;
+      var x = (1) * Math.sin(angle) * r;
       //console.log(x);
       //console.log((d.y + d.dy) * 2 * Math.PI);
       var y = (-1) * Math.cos(angle) * x;
