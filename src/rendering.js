@@ -514,6 +514,14 @@ export default function link(scope, elem, attrs, ctrl) {
 
     // console.log(data.tableRows.node[0]);
     var tr = tbody.append('tr');
+        tr.append('td').text('')
+            .style({
+              'background-color': data.tableRows.node[0].color,
+              'height': "20px",
+              'width': "20px",
+              'margin-right': '20px',
+              'text-align': 'left'
+            });
         tr.append('td').text(data.tableRows.node[0].key);
         tr.append('td').text(data.tableRows.node[0].value);
         tr.append('td').text(data.tableRows.node[0].rate);
