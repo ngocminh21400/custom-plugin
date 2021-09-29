@@ -513,9 +513,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
     //console.log(data);
     var tr = tbody.append('tr');
-    tr.append('td').text(data.tableRows.node.key);
-        tr.append('td').text(data.tableRows.node.value);
-        tr.append('td').text(data.tableRows.node.rate);
+        tr.select("tr").append('td').text(data.tableRows.node.key);
+        tr.select("tr").append('td').text(data.tableRows.node.value);
+        tr.select("tr").append('td').text(data.tableRows.node.rate);
 
     // var headerCols = [ 'field', 'sum', 'average', 'rate' ];
     // thead
