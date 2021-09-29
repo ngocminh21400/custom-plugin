@@ -522,7 +522,13 @@ export default function link(scope, elem, attrs, ctrl) {
               'margin-right': '20px',
               'text-align': 'left'
             });
-        tr.append('td').text(data.tableRows.node[0].key);
+        tr.append('td').text(function() {
+          if (data.tableRows.node[0].key == "root") {
+            return "All";
+          } else {
+            return data.tableRows.node[0].key;
+          }
+        });
         tr.append('td').text(data.tableRows.node[0].value);
         tr.append('td').text(data.tableRows.node[0].rate);
 
