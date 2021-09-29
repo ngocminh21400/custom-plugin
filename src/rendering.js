@@ -339,7 +339,7 @@ export default function link(scope, elem, attrs, ctrl) {
         if (d.key == 'root' || d.value == 0) {
           return;
         }
-        if (d.dx*2 < (width/4)) {
+        if (d.dx*width < 100) {
           return;
         }
 
