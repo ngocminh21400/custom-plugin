@@ -268,7 +268,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("fill-rule", "evenodd")
       .attr("fill", color)
       //.on("click", click)
-      .on("mouseover", mouseover)
+      //.on("mouseover", mouseover)
       .on("mouseout", mouseout);
     
     
