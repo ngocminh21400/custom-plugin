@@ -290,9 +290,9 @@ export default function link(scope, elem, attrs, ctrl) {
       var x = (-1) * Math.cos(angle) * r;
       var y = (-1) * Math.sin(angle) * r;
 
-      var rotate = radians_to_degrees(angle);
+      //var rotate = radians_to_degrees(angle);
       
-      return `rotate(${rotate}) translate(${x}, ${y})`;
+      return ` translate(${x}, ${y})`;
     }
     
     function radians_to_degrees(radians)
@@ -337,6 +337,9 @@ export default function link(scope, elem, attrs, ctrl) {
       .text(function(d) {
         //console.log(d);
         if (d.key == 'root' || d.value == 0) {
+          return;
+        }
+        if (d.dx*2 < (width/4)) {
           return;
         }
 
