@@ -512,11 +512,10 @@ export default function link(scope, elem, attrs, ctrl) {
     var tbody = table.append('tbody');
 
     console.log(data);
-    // var tr = tbody.append('tr');
-    // r.append('td').text('- ' + row.key)
-    //     tr.append('td').text(row.value);
-    //     tr.append('td').text(row.avg);
-    //     tr.append('td').text(row.rate);
+    var tr = tbody.append('tr');
+    tr.append('td').text(tableRows.node.key);
+        tr.append('td').text(tableRows.node.value);
+        tr.append('td').text(tableRows.node.rate);
 
     // var headerCols = [ 'field', 'sum', 'average', 'rate' ];
     // thead
