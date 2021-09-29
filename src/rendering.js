@@ -510,8 +510,9 @@ export default function link(scope, elem, attrs, ctrl) {
     var table = tooltip.append('table');
     var thead = table.append('thead');
     var tbody = table.append('tbody');
+    console.log(data.tableRows);
 
-    console.log(data.tableRows.key);
+    console.log(data.tableRows[0]);
     var tr = tbody.append('tr');
         tr.select("tr").append('td').text(data.tableRows.key);
         tr.select("tr").append('td').text(data.tableRows.value);
