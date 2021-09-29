@@ -510,13 +510,13 @@ export default function link(scope, elem, attrs, ctrl) {
     var table = tooltip.append('table');
     var thead = table.append('thead');
     var tbody = table.append('tbody');
-    console.log(data.tableRows.node);
+    // console.log(data.tableRows.node);
 
-    console.log(data.tableRows.node[0]);
+    // console.log(data.tableRows.node[0]);
     var tr = tbody.append('tr');
-        tr.select("tr").append('td').text(data.tableRows.key);
-        tr.select("tr").append('td').text(data.tableRows.value);
-        tr.select("tr").append('td').text(data.tableRows.rate);
+        tr.select("tr").append('td').text(data.tableRows.node[0].key);
+        tr.select("tr").append('td').text(data.tableRows.node[0].value);
+        tr.select("tr").append('td').text(data.tableRows.node[0].rate);
 
     // var headerCols = [ 'field', 'sum', 'average', 'rate' ];
     // thead
