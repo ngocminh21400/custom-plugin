@@ -314,8 +314,8 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb_data = partition.nodes(hierarchy);
     
 
-    console.log(lb_data);
-    var lb = g_lable.selectAll("text")
+   
+    const lb = g_lable.selectAll("text")
       .data(lb_data)
       .enter()
       .append("text")
@@ -336,7 +336,18 @@ export default function link(scope, elem, attrs, ctrl) {
       //   return d.key + " - " + d.value;
       // });
     
-    lb.append("tspan").text(d.key);
+    lb.append("tspan")
+      .text(function(d) {
+        console.log(d);
+        if (d.key == 'root' || d.value == 0) {
+          return;
+        }
+        if (d.dx*width < 30) {
+          return;
+        }
+
+        return d.key + " - " + d.value;
+      });
     
     
     //console.log(lb);
