@@ -315,7 +315,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     lb_data.forEach(data => {
       //console.log(data);
-      var lb = g_lable.append("text")
+      var lb = g_lable.append("text").data(data)
         .attr("transform", function (data) {
           console.log(data);
           console.log(labelTransform(data));
