@@ -314,9 +314,10 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb_data = partition.nodes(hierarchy);
     
     lb_data.forEach(data => {
-      console.log(data);
       label = data.dx;
-      var lb = g_lable.append("text").data(label)
+      console.log(label);
+
+      var lb = g_lable.append("text").data(label).enter()
         .attr("transform", function (d) {
           console.log(d);
           // console.log(labelTransform(d));
