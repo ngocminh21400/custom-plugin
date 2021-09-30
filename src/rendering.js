@@ -348,7 +348,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
         return d.key;
       });
-      lb.append("tspan").attr("x", 0).attr("dy", "1.5em")
+    lb.append("tspan").attr("x", 0)
+      .attr("dy", "1.5em")
+      .style("font-weight","400")
       .text(function(d) {
         //console.log(d);
         if (d.key == 'root' || d.value == 0) {
