@@ -313,45 +313,29 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(gg);
     var lb_data = partition.nodes(hierarchy);
     
-    lb_data.forEach(data => {
-      var label_ = data.dx;
-      console.log(label_);
 
-      var lb = g_lable.selectAll("text").data(label_).enter().append('text')
-        .attr("transform", function (d) {
-          console.log(d);
-          // console.log(labelTransform(d));
-          // return labelTransform(d);
-        })
-        .style({
-          'fill': "white",
-          'text-anchor': 'middle',
-        });
-      
-      lb.append('tspan');
-      
-    });
-    //console.log(lb_data);
-    // var lb = g_lable.selectAll("text")
-    //   .data(lb_data)
-    //   .enter()
-    //   .append("text")
-    //   .attr("transform",function(d) {
-    //     console.log(labelTransform(d));
-    //     return labelTransform(d);
-    //   })
-    //   .style("fill","white")
-    //   .text(function(d) {
-    //     //console.log(d);
-    //     if (d.key == 'root' || d.value == 0) {
-    //       return;
-    //     }
-    //     if (d.dx*width < 30) {
-    //       return;
-    //     }
+    console.log(lb_data);
+    var lb = g_lable.selectAll("text")
+      .data(lb_data)
+      .enter()
+      .append("text")
+      .attr("transform",function(d) {
+        console.log(labelTransform(d));
+        return labelTransform(d);
+      })
+      .style("fill","white")
+      .text(function(d) {
+        //console.log(d);
+        if (d.key == 'root' || d.value == 0) {
+          return;
+        }
+        if (d.dx*width < 30) {
+          return;
+        }
 
-    //     return d.key + "<br>" + d.value;
-    //   });
+        return d.key + " - " + d.value;
+      });
+    
     
     //console.log(lb);
     //build legend
