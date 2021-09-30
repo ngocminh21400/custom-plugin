@@ -317,7 +317,7 @@ export default function link(scope, elem, attrs, ctrl) {
       var label_ = data.dx;
       console.log(label_);
 
-      var lb = g_lable.append("text").data(label_)
+      var lb = g_lable.selectAll("text").data(label_).enter().append('text')
         .attr("transform", function (d) {
           console.log(d);
           // console.log(labelTransform(d));
