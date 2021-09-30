@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log(panel);
       // console.log(data);
       addSunburst();
-
+      console.log(panel);
       
     }
   }
@@ -343,7 +343,7 @@ export default function link(scope, elem, attrs, ctrl) {
           return;
         }
 
-        return d.key;
+        return d.key + "<br>" + d.value;
       });
     
     //console.log(lb);
