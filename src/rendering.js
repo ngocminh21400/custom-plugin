@@ -338,7 +338,7 @@ export default function link(scope, elem, attrs, ctrl) {
     
     lb.append("tspan")
       .text(function(d) {
-        console.log(d);
+        //console.log(d);
         if (d.key == 'root' || d.value == 0) {
           return;
         }
@@ -346,7 +346,19 @@ export default function link(scope, elem, attrs, ctrl) {
           return;
         }
 
-        return d.key + " - " + d.value;
+        return d.key;
+      });
+      lb.append("tspan")
+      .text(function(d) {
+        //console.log(d);
+        if (d.key == 'root' || d.value == 0) {
+          return;
+        }
+        if (d.dx*width < 30) {
+          return;
+        }
+
+        return d.value;
       });
     
     
