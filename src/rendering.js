@@ -336,7 +336,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //   return d.key + " - " + d.value;
       // });
     
-    lb.append("tspan")
+    lb.append("tspan").attr("x", 0)
       .text(function(d) {
         //console.log(d);
         if (d.key == 'root' || d.value == 0) {
@@ -348,7 +348,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
         return d.key;
       });
-      lb.append("tspan")
+      lb.append("tspan").attr("x", 0)
       .text(function(d) {
         //console.log(d);
         if (d.key == 'root' || d.value == 0) {
