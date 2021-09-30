@@ -314,7 +314,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb_data = partition.nodes(hierarchy);
     
     lb_data.forEach(data => {
-      console.log(data);
+      //console.log(data);
       var lb = g_lable.select("text")
         .data(data)
         .enter()
@@ -323,7 +323,10 @@ export default function link(scope, elem, attrs, ctrl) {
           console.log(labelTransform(d));
           return labelTransform(d);
         })
-        .style("fill", "white");
+        .style({
+          'fill': "white",
+          'text-anchor': 'middle',
+        });
       
       lb.append('tspan');
       
