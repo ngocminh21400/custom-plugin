@@ -322,7 +322,7 @@ export default function link(scope, elem, attrs, ctrl) {
         })
         .style("fill", "white");
       
-      lb.append('tspan');
+      //lb.append('tspan');
       
     });
     //console.log(lb_data);
