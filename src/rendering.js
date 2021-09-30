@@ -320,13 +320,14 @@ export default function link(scope, elem, attrs, ctrl) {
         .enter()
         .append("text")
         .attr("transform", function (d) {
+          console.log(d);
           console.log(labelTransform(d));
           return labelTransform(d);
-        })
-        .style({
-          'fill': "white",
-          'text-anchor': 'middle',
         });
+        // .style({
+        //   'fill': "white",
+        //   'text-anchor': 'middle',
+        // });
       
       lb.append('tspan');
       
