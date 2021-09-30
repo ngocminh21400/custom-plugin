@@ -292,7 +292,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
       //var rotate = radians_to_degrees(angle);
       
-      return ` translate(${x}, ${y})`;
+      return `rotate(0) translate(${x}, ${y})`;
     }
     
     function radians_to_degrees(radians)
@@ -320,7 +320,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("text")
       .attr("transform",function(d) {
-        console.log(labelTransform(d));
+        //console.log(labelTransform(d));
         return labelTransform(d);
       })
       .style("fill","white")
