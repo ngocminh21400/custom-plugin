@@ -314,12 +314,13 @@ export default function link(scope, elem, attrs, ctrl) {
     var lb_data = partition.nodes(hierarchy);
     
     lb_data.forEach(data => {
-      //console.log(data);
-      var lb = g_lable.append("text").data(data)
-        .attr("transform", function (data) {
-          console.log(data);
-          console.log(labelTransform(data));
-          return labelTransform(data);
+      console.log(data);
+      label = data.dx;
+      var lb = g_lable.append("text").data(label)
+        .attr("transform", function (d) {
+          console.log(d);
+          // console.log(labelTransform(d));
+          // return labelTransform(d);
         })
         .style({
           'fill': "white",
