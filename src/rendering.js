@@ -319,22 +319,24 @@ export default function link(scope, elem, attrs, ctrl) {
       .data(lb_data)
       .enter()
       .append("text")
-      .attr("transform",function(d) {
+      .attr("transform", function (d) {
         //console.log(labelTransform(d));
         return labelTransform(d);
       })
-      .style("fill","white")
-      .text(function(d) {
-        //console.log(d);
-        if (d.key == 'root' || d.value == 0) {
-          return;
-        }
-        if (d.dx*width < 30) {
-          return;
-        }
+      .style("fill", "white");
+      // .text(function(d) {
+      //   //console.log(d);
+      //   if (d.key == 'root' || d.value == 0) {
+      //     return;
+      //   }
+      //   if (d.dx*width < 30) {
+      //     return;
+      //   }
 
-        return d.key + " - " + d.value;
-      });
+      //   return d.key + " - " + d.value;
+      // });
+    
+    lb.append("tspan").text(d.key);
     
     
     //console.log(lb);
