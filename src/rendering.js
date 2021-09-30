@@ -315,28 +315,37 @@ export default function link(scope, elem, attrs, ctrl) {
     
     lb_data.forEach(d => {
       console.log(d);
+      var lb = g_lable
+        .append("text")
+        .attr("transform", function (d) {
+          console.log(labelTransform(d));
+          return labelTransform(d);
+        })
+        .style("fill", "white");
+      lb.append('tspan');
+      
     });
     //console.log(lb_data);
-    var lb = g_lable.selectAll("text")
-      .data(lb_data)
-      .enter()
-      .append("text")
-      .attr("transform",function(d) {
-        console.log(labelTransform(d));
-        return labelTransform(d);
-      })
-      .style("fill","white")
-      .text(function(d) {
-        //console.log(d);
-        if (d.key == 'root' || d.value == 0) {
-          return;
-        }
-        if (d.dx*width < 30) {
-          return;
-        }
+    // var lb = g_lable.selectAll("text")
+    //   .data(lb_data)
+    //   .enter()
+    //   .append("text")
+    //   .attr("transform",function(d) {
+    //     console.log(labelTransform(d));
+    //     return labelTransform(d);
+    //   })
+    //   .style("fill","white")
+    //   .text(function(d) {
+    //     //console.log(d);
+    //     if (d.key == 'root' || d.value == 0) {
+    //       return;
+    //     }
+    //     if (d.dx*width < 30) {
+    //       return;
+    //     }
 
-        return d.key + "<br>" + d.value;
-      });
+    //     return d.key + "<br>" + d.value;
+    //   });
     
     //console.log(lb);
     //build legend
