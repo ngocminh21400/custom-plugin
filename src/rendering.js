@@ -316,11 +316,11 @@ export default function link(scope, elem, attrs, ctrl) {
     lb_data.forEach(data => {
       //console.log(data);
       var lb = g_lable.append("text")
-        // .attr("transform", function (d) {
-        //   console.log(d);
-        //   console.log(labelTransform(d));
-        //   return labelTransform(d);
-        // });
+        .attr("transform", function (data) {
+          console.log(data);
+          console.log(labelTransform(data));
+          return labelTransform(data);
+        })
         .style({
           'fill': "white",
           'text-anchor': 'middle',
