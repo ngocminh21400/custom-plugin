@@ -315,10 +315,13 @@ export default function link(scope, elem, attrs, ctrl) {
     
     lb_data.forEach(data => {
       console.log(data);
-      var lb = g_lable.append("text")
-        .attr("transform", function (data) {
-          console.log(labelTransform(data));
-          return labelTransform(data);
+      var lb = g_lable.select("text")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("transform", function (d) {
+          console.log(labelTransform(d));
+          return labelTransform(d);
         })
         .style("fill", "white");
       
