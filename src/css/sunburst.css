@@ -64,7 +64,8 @@
 .legend tr{
     display: block;
     margin-bottom: 10px;
+    font-size: 12px;
 }
-.graph-wrapper, .graph-canvas-wrapperm, .sunburst, .sunburst-legend{
+.graph-wrapper, .graph-canvas-wrapper, .sunburst, .sunburst-legend{
     height: 100%;
 }
