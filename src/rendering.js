@@ -8,7 +8,7 @@ import d3 from './d3.v3.min';
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
   var formaters = [];
-
+  ctrl.panel.showLabel = 0;
   elem = elem.find('.sunburst');
 
   ctrl.events.on('render', function() {
