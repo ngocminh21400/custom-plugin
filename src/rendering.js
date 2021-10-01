@@ -233,7 +233,7 @@ export default function link(scope, elem, attrs, ctrl) {
     };
 
     // Draw graph
-    d3.select("#sunburst-g-" + ctrl.panel.id).remove();
+    d3.select("#g-label-" + ctrl.panel.id).remove();
   
     var svg = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .attr("width", width + margin.left + margin.right)
@@ -307,9 +307,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .attr("id", "label-" + ctrl.panel.id);
     //console.log(gg);
     var lb_data = partition.nodes(hierarchy);
-    
-    g_lable.html("");
-   
+       
     const lb = g_lable.selectAll("text")
       .data(lb_data)
       .enter()
