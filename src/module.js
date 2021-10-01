@@ -3,8 +3,8 @@ import {SunburstCtrl} from './sunburst_ctrl';
 import {loadPluginCss} from 'app/plugins/sdk';
 
 loadPluginCss({
-  dark:  'plugins/grafana-sunburst-panel/css/sunburst.dark.css',
-  light: 'plugins/grafana-sunburst-panel/css/sunburst.light.css'
+  dark:  'plugins/custom-plugin/css/sunburst.dark.css',
+  light: 'plugins/custom-plugin/css/sunburst.light.css'
 });
 
 export {

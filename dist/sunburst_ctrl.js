@@ -102,7 +102,7 @@ System.register(['app/plugins/sdk', 'lodash', 'app/core/utils/kbn', 'app/core/ti
         _createClass(SunburstCtrl, [{
           key: 'onInitEditMode',
           value: function onInitEditMode() {
-            this.addEditorTab('Options', 'public/plugins/grafana-sunburst-panel/editor.html', 2);
+            this.addEditorTab('Options', 'public/plugins/custom-plugin/editor.html', 2);
           }
         }, {
           key: 'onDataError',

@@ -1,7 +1,7 @@
 {
   "type": "panel",
   "name": "SunBurst",
-  "id": "grafana-sunburst-panel",
+  "id": "custom-plugin",
 
   "info": {
     "description": "SunBurst panel for grafana",
@@ -11,7 +11,7 @@
     },
     "keywords": ["sunburst", "panel"],
     "links": [
-      {"name": "Project site", "url": "https://github.com/sraoss/grafana-sunburst-panel"},
+      {"name": "Project site", "url": "https://github.com/sraoss/custom-plugin"},
       {"name": "Apache 2.0", "url": ""}
     ],
     "screenshots": [

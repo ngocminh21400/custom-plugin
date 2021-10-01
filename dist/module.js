@@ -16,8 +16,8 @@ System.register(['lodash', './sunburst_ctrl', 'app/plugins/sdk'], function (_exp
     execute: function () {
 
       loadPluginCss({
-        dark: 'plugins/grafana-sunburst-panel/css/sunburst.dark.css',
-        light: 'plugins/grafana-sunburst-panel/css/sunburst.light.css'
+        dark: 'plugins/custom-plugin/css/sunburst.dark.css',
+        light: 'plugins/custom-plugin/css/sunburst.light.css'
       });
 
       _export('PanelCtrl', SunburstCtrl);
