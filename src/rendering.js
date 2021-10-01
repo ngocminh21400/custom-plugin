@@ -322,15 +322,15 @@ export default function link(scope, elem, attrs, ctrl) {
 
     console.log(ctrl.panel.showLabel);
     switch (ctrl.panel.showLabel) {
-      case 1:
+      case "1":
         console.log(1);
         labelName();
         break;
-      case 2:
+      case "2":
         console.log(2);
         labelValue();
         break;
-      case 3:
+      case "3":
         labelName();
         labelValue();
         break;
