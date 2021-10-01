@@ -62,7 +62,9 @@ export default function link(scope, elem, attrs, ctrl) {
     var rawData = data[0].datapoints;
     panel.nodeKeys = _.keys(rawData[0]);
     var hierarchy = createHierarchy(rawData);
+    console.log(hierarchy);
 
+    console.log(partition.nodes(hierarchy));
     var partition = d3.layout.partition()
       .children(function(d) {
         return Array.isArray(d.values) ?
@@ -320,7 +322,7 @@ export default function link(scope, elem, attrs, ctrl) {
       })
       .style("fill", "white");
 
-    console.log(ctrl.panel.showLabel);
+    //console.log(ctrl.panel.showLabel);
 
     switch (ctrl.panel.showLabel) {
       case "1":
@@ -373,7 +375,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     //console.log(lb);
     //build legend
-    console.log(ctrl.panel.showLegend);
+    //console.log(ctrl.panel.showLegend);
     if (ctrl.panel.showLegend == "1") {
       buildFixedTooltip(partition.nodes(hierarchy));
     } else {
