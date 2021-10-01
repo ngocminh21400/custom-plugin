@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
       // console.log(panel);
       // console.log(data);
       addSunburst();
-      console.log(panel);
+      //console.log(panel);
       
     }
   }
@@ -320,6 +320,7 @@ export default function link(scope, elem, attrs, ctrl) {
       })
       .style("fill", "white");
 
+    console.log(ctrl.panel.showLabel);
     switch (ctrl.panel.showLabel) {
       case 1:
         console.log(1);
