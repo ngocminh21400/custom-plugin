@@ -21,7 +21,7 @@
 		<li class="dropdown" style="width: 150px"
 			ng-model="style.unit"
 			dropdown-typeahead="ctrl.unitFormats"
-			dropdown-typeahead-on-select="ctrl.setUnitFormat(style, $subItem)">
+			dropdown-typeahead-on-select="ctrl.setUnitFormat(style, $subItem)" ng-change="ctrl.render()" >
 		</li>
 
 		<li class="tight-form-item text-right">Decimals</li>

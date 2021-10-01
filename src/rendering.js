@@ -23,6 +23,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
     data = ctrl.data;
     panel = ctrl.panel;
+    console.log(style.decimals);
+    console.log(ctrl.style.unit);
 
     if (setElementHeight()) {
       // console.log(panel);
