@@ -39,7 +39,7 @@
 
 .form-group{
     display: block;
-    padding: 15px 0px;
+    padding: 10px 0px;
 
 }
 .form-group label{
@@ -50,4 +50,21 @@
 .form-group select{
     display: block;
     width: 100%;
+}
+.sunburst{
+    width: 70%;
+    display: inline-block;
+}
+.legend{
+    width: 27%;
+    padding: 16px;
+    display: inline-block;
+    overflow-y: scroll;
+}
+.legend tr{
+    display: block;
+    margin-bottom: 10px;
+}
+.graph-wrapper, .graph-canvas-wrapperm, .sunburst, .sunburst-legend{
+    height: 100%;
 }
