@@ -8,7 +8,9 @@ import d3 from './d3.v3.min';
 export default function link(scope, elem, attrs, ctrl) {
   var data, panel;
   var formaters = [];
-  ctrl.panel.showLabel = 0;
+  ctrl.panel.showLabel = "0";
+  ctrl.panel.showLegend = "1";
+
   elem = elem.find('.sunburst');
 
   ctrl.events.on('render', function() {
@@ -371,12 +373,12 @@ export default function link(scope, elem, attrs, ctrl) {
 
     //console.log(lb);
     //build legend
-    d3.select("#sunburst-legend-" + ctrl.panel.id).remove();
     
-    if (ctrl.panel.showLegend) {
+    if (ctrl.panel.showLegend == "1") {
       buildFixedTooltip(partition.nodes(hierarchy));
     } else {
-      
+      d3.select("#sunburst-legend-" + ctrl.panel.id).remove();
+
     }
 
 
