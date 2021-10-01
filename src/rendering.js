@@ -62,9 +62,7 @@ export default function link(scope, elem, attrs, ctrl) {
     var rawData = data[0].datapoints;
     panel.nodeKeys = _.keys(rawData[0]);
     var hierarchy = createHierarchy(rawData);
-    console.log(hierarchy);
 
-    console.log(partition.nodes(hierarchy));
     var partition = d3.layout.partition()
       .children(function(d) {
         return Array.isArray(d.values) ?
