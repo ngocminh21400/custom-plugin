@@ -4,7 +4,7 @@ import kbn from 'app/core/utils/kbn';
 import TimeSeries from 'app/core/time_series';
 import rendering from './rendering';
 
-class SunburstCtrl extends MetricsPanelCtrl {
+export class SunburstCtrl extends MetricsPanelCtrl {
   static templateUrl = 'module.html';
 
   constructor($scope, $injector, $rootScope) {
@@ -177,4 +177,3 @@ class SunburstCtrl extends MetricsPanelCtrl {
 }
 
 
-export { SunburstCtrl, SunburstCtrl as MetricsPanelCtrl };
