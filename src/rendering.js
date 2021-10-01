@@ -242,12 +242,7 @@ export default function link(scope, elem, attrs, ctrl) {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
       });
-    // .append('g')
-    //   .attr('id', "sunburst-g-" + ctrl.panel.id)
-    //   .attr("transform", "translate(" +
-    //     (margin.left + width  / 2) + ", " +
-    //     (margin.top  + height / 2) + ")"
-    // );
+
     const g = svg.append("g")
       .attr("transform", "translate(" +
         (margin.left + width  / 2) + ", " +
@@ -324,44 +319,23 @@ export default function link(scope, elem, attrs, ctrl) {
         return labelTransform(d);
       })
       .style("fill", "white");
-      // .text(function(d) {
-      //   //console.log(d);
-      //   if (d.key == 'root' || d.value == 0) {
-      //     return;
-      //   }
-      //   if (d.dx*width < 30) {
-      //     return;
-      //   }
 
-      //   return d.key + " - " + d.value;
-      // });
-    
-    lb.append("tspan").attr("x", 0)
-      .text(function(d) {
-        //console.log(d);
-        if (d.key == 'root' || d.value == 0) {
-          return;
-        }
-        if (d.dx*width < 30) {
-          return;
-        }
+    switch (ctrl.panel.showLabel) {
+      case 1:
+        labelName();
+        break;
+      case 2:
+        labelValue();
+        break;
+      case 3:
+        labelName();
+        labelValue();
+        break;
+      default:
+        break;
+    }
 
-        return d.key;
-      });
-    lb.append("tspan").attr("x", 0)
-      .attr("dy", "1.5em")
-      .style("font-weight","500")
-      .text(function(d) {
-        //console.log(d);
-        if (d.key == 'root' || d.value == 0) {
-          return;
-        }
-        if (d.dx*width < 30) {
-          return;
-        }
 
-        return d.value;
-      });
     
     
     //console.log(lb);
@@ -374,7 +348,36 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   // Functions
+  function labelName() {
+    lb.append("tspan").attr("x", 0)
+    .text(function(d) {
+      //console.log(d);
+      if (d.key == 'root' || d.value == 0) {
+        return;
+      }
+      if (d.dx*width < 30) {
+        return;
+      }
 
+      return d.key;
+    });
+  }
+  function labelValue() {
+    lb.append("tspan").attr("x", 0)
+    .attr("dy", "1.5em")
+    .style("font-weight","500")
+    .text(function(d) {
+      //console.log(d);
+      if (d.key == 'root' || d.value == 0) {
+        return;
+      }
+      if (d.dx*width < 30) {
+        return;
+      }
+
+      return d.value;
+    });
+  }
 
   function createHierarchy(datapoints) {
     var nest = d3.nest();
