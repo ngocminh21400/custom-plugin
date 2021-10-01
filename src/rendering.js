@@ -375,17 +375,19 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(lb);
     //build legend
     //console.log(ctrl.panel.showLegend);
-    console.log(ctrl.panel.showLegend);
+    //console.log(ctrl.panel.showLegend);
     if (ctrl.panel.showLegend == "1") {
-      console.log(true);
+      buildFixedTooltip(partition.nodes(hierarchy));
      
     } else {
       console.log(false);
-      d3.select("#sunburst-legend-" + ctrl.panel.id).remove();
+      var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
+      legend.selectAll('table').remove();
+      legend.selectAll('p').remove();
 
     }
 
-    buildFixedTooltip(partition.nodes(hierarchy));
+    
 
 
   }
