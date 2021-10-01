@@ -37,3 +37,16 @@
     transition: opacity 3s 0;
 }
 
+.form-group{
+    display: block;
+    padding: 10px 20px;
+
+}
+.form-group label{
+    display: block;
+    font-weight: bolder;
+}
+.form-group select{
+    display: block;
+    width: 100%;
+}
