@@ -25,7 +25,7 @@ export default function link(scope, elem, attrs, ctrl) {
     data = ctrl.data;
     panel = ctrl.panel;
 
-    console.log(panel);
+    //console.log(panel);
 
     if (setElementHeight()) {
 
@@ -339,7 +339,6 @@ export default function link(scope, elem, attrs, ctrl) {
         break;
     }
 
-
     
       // Functions
       function labelName() {
@@ -376,9 +375,12 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(lb);
     //build legend
     //console.log(ctrl.panel.showLegend);
+    console.log(ctrl.panel.showLegend);
     if (ctrl.panel.showLegend == "1") {
+      console.log(true);
       buildFixedTooltip(partition.nodes(hierarchy));
     } else {
+      console.log(false);
       d3.select("#sunburst-legend-" + ctrl.panel.id).remove();
 
     }
