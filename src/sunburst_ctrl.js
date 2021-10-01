@@ -4,7 +4,8 @@ import kbn from 'app/core/utils/kbn';
 import TimeSeries from 'app/core/time_series';
 import rendering from './rendering';
 
-export class SunburstCtrl extends MetricsPanelCtrl {
+class SunburstCtrl extends MetricsPanelCtrl {
+  static templateUrl = 'module.html';
 
   constructor($scope, $injector, $rootScope) {
     super($scope, $injector);
@@ -41,7 +42,7 @@ export class SunburstCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Options', 'public/plugins/grafana-sunburst-panel/editor.html', 2);
+    this.addEditorTab('Options', 'public/plugins/custom-plugin/editor.html', 2);
   }
 
   onDataError() {
@@ -175,4 +176,5 @@ export class SunburstCtrl extends MetricsPanelCtrl {
   }
 }
 
-SunburstCtrl.templateUrl = 'module.html';
+
+export { SunburstCtrl, SunburstCtrl as MetricsPanelCtrl };
