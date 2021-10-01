@@ -19,15 +19,14 @@ export default function link(scope, elem, attrs, ctrl) {
   });
 
   function render() {
-    console.log(panel);
-    console.log(panel.style);
+
     if (!ctrl.data) { return; }
 
     data = ctrl.data;
     panel = ctrl.panel;
-    //console.log(style.decimals);
-    //console.log(ctrl.style.unit);
 
+    console.log(panel);
+    console.log(panel.style);
     if (setElementHeight()) {
 
       addSunburst();
