@@ -41,7 +41,7 @@ export class SunburstCtrl extends MetricsPanelCtrl {
   }
 
   onInitEditMode() {
-    this.addEditorTab('Options', 'public/plugins/custom-plugin/editor.html', 2);
+    this.addEditorTab('Options', 'public/plugins/custom/editor.html', 2);
   }
 
   onDataError() {
