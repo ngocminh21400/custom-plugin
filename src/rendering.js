@@ -371,7 +371,13 @@ export default function link(scope, elem, attrs, ctrl) {
 
     //console.log(lb);
     //build legend
-    buildFixedTooltip(partition.nodes(hierarchy));
+    d3.select("#sunburst-legend-" + ctrl.panel.id).remove();
+    
+    if (ctrl.panel.showLegend) {
+      buildFixedTooltip(partition.nodes(hierarchy));
+    } else {
+      
+    }
 
 
 

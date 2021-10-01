@@ -1,13 +1,21 @@
 <div class="form-group">
-	<label for="my-select">Text</label>
-	<select id="my-select" class="form-control" name="">
-		<option selected>Text</option>
-		<option >Text111</option>
-
+	<label for="my-select">Show legend: </label>
+	<select id="my-select" class="form-control" ng-model="ctrl.panel.showLegend" ng-change="ctrl.render()">
+		<option selected value="1">Show</option>
+		<option value="0">Hide</option>
 	</select>
 </div>
 
-<div class="ctrl-row">
+<div class="form-group">
+	<label for="my-select">Show label:  </label>
+	<select id="my-select" class="form-control" ng-model="ctrl.panel.showLabel" ng-change="ctrl.render()">
+		<option selected value="0">Hide</option>
+		<option value="1">Name</option>
+		<option value="2">Value</option>
+		<option value="3">All</option>
+	</select>
+</div>
+<!-- <div class="ctrl-row">
 	<div class="section">
 
 		<h5>General</h5>
@@ -17,7 +25,7 @@
 					Show legend: 
 				</li>
 				<li>
-					<select class="" id="" ng-model="ctrl.panel.showLegend" ng-change="ctrl.render()">
+					<select class="" id="" >
 						<option selected value="1">Show</option>
 						<option value="0">Hide</option>
 					</select>
@@ -127,4 +135,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
