@@ -5,7 +5,6 @@ import TimeSeries from 'app/core/time_series';
 import rendering from './rendering';
 
 export class SunburstCtrl extends MetricsPanelCtrl {
-  static templateUrl = 'module.html';
 
   constructor($scope, $injector, $rootScope) {
     super($scope, $injector);
@@ -176,4 +175,4 @@ export class SunburstCtrl extends MetricsPanelCtrl {
   }
 }
 
-
+SunburstCtrl.templateUrl = 'module.html';
