@@ -26,7 +26,7 @@ export default function link(scope, elem, attrs, ctrl) {
     panel = ctrl.panel;
 
     console.log(panel);
-    console.log(panel.style);
+
     if (setElementHeight()) {
 
       addSunburst();
