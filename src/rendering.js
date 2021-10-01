@@ -308,7 +308,7 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(gg);
     var lb_data = partition.nodes(hierarchy);
     
-
+    g_lable.html("");
    
     const lb = g_lable.selectAll("text")
       .data(lb_data)
@@ -321,13 +321,12 @@ export default function link(scope, elem, attrs, ctrl) {
       .style("fill", "white");
 
     console.log(ctrl.panel.showLabel);
+
     switch (ctrl.panel.showLabel) {
       case "1":
-        console.log(1);
         labelName();
         break;
       case "2":
-        console.log(2);
         labelValue();
         break;
       case "3":
