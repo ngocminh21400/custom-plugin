@@ -24,11 +24,10 @@ export default function link(scope, elem, attrs, ctrl) {
     data = ctrl.data;
     panel = ctrl.panel;
     //console.log(style.decimals);
-    console.log(ctrl.style.unit);
+    //console.log(ctrl.style.unit);
 
     if (setElementHeight()) {
-      // console.log(panel);
-      // console.log(data);
+
       addSunburst();
       //console.log(panel);
       
@@ -446,10 +445,7 @@ export default function link(scope, elem, attrs, ctrl) {
       key: panel.rootKey,
       values: filteredValues
     };
-    // console.log(1);
-    // console.log(rtn.values);
-    // console.log(rtn.key);
-    // console.log(rtn);
+
     return rtn;
   }
 
