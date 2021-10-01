@@ -373,7 +373,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     //console.log(lb);
     //build legend
-    
+    console.log(ctrl.panel.showLegend);
     if (ctrl.panel.showLegend == "1") {
       buildFixedTooltip(partition.nodes(hierarchy));
     } else {
