@@ -340,13 +340,21 @@ export default function link(scope, elem, attrs, ctrl) {
         //var rotate = radians_to_degrees(angle);
         
         //return `rotate(0) translate(${x}, ${y})`;
-        var dau = 0;
+        var dau_y = 0;
         if (Math.sin(angle) > 0 ) {
-          dau = -1;
+          dau_y = -1;
         } else {
-          dau = 1;
+          dau_y = 1;
         }
-        return `${x} ${y}, ${x + 50} ${y +50 * dau }`;
+
+        var dau_x = 0;
+        if (Math.cos(angle) > 0 ) {
+          dau_x = -1;
+        } else {
+          dau_x = 1;
+        }
+
+        return `${x} ${y}, ${x + 50} ${y +50 * dau_y }`;
       })
       .style({"fill":"none","stroke":"white","stroke-width":2});
     
