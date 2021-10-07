@@ -346,9 +346,9 @@ export default function link(scope, elem, attrs, ctrl) {
         } else {
           dau = 1;
         }
-        return `${x} ${y}, ${x + 50} ${y +50 * dau }, ${x + 100} ${y +50 }`;
+        return `${x} ${y}, ${x + 50} ${y +50 * dau }`;
       })
-      .style({"fill":"none","stroke":"white","stroke-width":3});
+      .style({"fill":"none","stroke":"white","stroke-width":2});
     
     
     
