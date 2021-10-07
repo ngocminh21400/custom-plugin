@@ -291,7 +291,23 @@ export default function link(scope, elem, attrs, ctrl) {
 
       //var rotate = radians_to_degrees(angle);
       
-      return `rotate(0) translate(${x}, ${y})`;
+      //return `rotate(0) translate(${x}, ${y})`;
+
+      var dau_y = 0;
+      if (Math.sin(angle) > 0 ) {
+        dau_y = -1;
+      } else {
+        dau_y = 1;
+      }
+
+      var dau_x = 0;
+      if (Math.cos(angle) > 0 ) {
+        dau_x = -1;
+      } else {
+        dau_x = 1;
+      }
+
+      return `translate(${x + 50 * dau_x }, ${y +50 * dau_y })`;
     }
     
     function radians_to_degrees(radians)
