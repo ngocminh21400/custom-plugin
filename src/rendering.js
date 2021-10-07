@@ -339,7 +339,8 @@ export default function link(scope, elem, attrs, ctrl) {
   
         //var rotate = radians_to_degrees(angle);
         
-        return "20,20 40,25 60,40 80,120 120,140 200,180";
+        //return `rotate(0) translate(${x}, ${y})`;
+        return `${x} ${y}, ${x + 50} ${y}`;
       })
       .style({"fill":"none","stroke":"black","stroke-width":3});
     
