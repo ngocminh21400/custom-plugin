@@ -321,6 +321,31 @@ export default function link(scope, elem, attrs, ctrl) {
         return labelTransform(d);
       })
       .style("fill", "white");
+    
+    const line = g_lable.selectAll("polyline")
+      .data(lb_data)
+      .enter()
+      .append("polyline")
+      .attr("points", function (d) {
+        var r =  ((height + margin.top + margin.bottom) / 2) * 0.9  * (d.y + d.dy); 
+      
+        var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
+        if (d.key == 'root') {
+          return ` translate(0 ,0)`;
+        }
+  
+        var x = (-1) * Math.cos(angle) * r;
+        var y = (-1) * Math.sin(angle) * r;
+  
+        //var rotate = radians_to_degrees(angle);
+        
+        return "20,20 40,25 60,40 80,120 120,140 200,180";
+      })
+      .style({"fill":"none","stroke":"black","stroke-width":3});
+    
+    
+    
+    
 
     //console.log(ctrl.panel.showLabel);
 
@@ -334,12 +359,12 @@ export default function link(scope, elem, attrs, ctrl) {
       case "3":
         labelName();
         labelValue();
+        labelLine();
         break;
       default:
         break;
     }
 
-    
       // Functions
       function labelName() {
         lb.append("tspan").attr("x", 0)
