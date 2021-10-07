@@ -354,7 +354,7 @@ export default function link(scope, elem, attrs, ctrl) {
           dau_x = 1;
         }
 
-        return `${x} ${y}, ${x + 50} ${y +50 * dau_y }`;
+        return `${x} ${y}, ${x + 50 * dau_x } ${y +50 * dau_y }`;
       })
       .style({"fill":"none","stroke":"white","stroke-width":2});
     
