@@ -246,7 +246,7 @@ export default function link(scope, elem, attrs, ctrl) {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
       });
-console.log(svg);
+
     const g = svg.append("g")
       .attr("transform", "translate(" +
         (margin.left + width  / 2) + ", " +
@@ -453,15 +453,13 @@ console.log(svg);
     }
 
 
-    console.log(svg);
-    svg.attr("width", 700)
-      .attr("height", 700);
-    console.log(svg);
-    var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .attr("width", 700)
-      .attr("height", 700 );
+    // console.log(svg);
+    // svg.attr("width", 700)
+    //   .attr("height", 700);
+    // console.log(svg);
+    var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id);
 
-
+    console.log(svg_change);
   }
 
   // Functions
