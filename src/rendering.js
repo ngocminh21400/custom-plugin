@@ -80,8 +80,8 @@ export default function link(scope, elem, attrs, ctrl) {
     var margin = { top: 10, right: 10, bottom: 10, left: 10 };
     var width_ = elemWidth - margin.left - margin.right;
     var height_ = elemHeight - margin.top - margin.bottom;
-    var width = width_ - 100;
-    var height = height_ - 100;
+    var width = width_ - 160;
+    var height = height_ - 160;
     var radius = Math.min(width, height) / 2;
     var topDepth = 0;
 
@@ -251,8 +251,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
     const g = svg.append("g")
       .attr("transform", "translate(" +
-        (margin.left + width  / 2 + 50) + ", " +
-        (margin.top  + height / 2 + 50) + ")"
+        (margin.left + width  / 2 + 80) + ", " +
+        (margin.top  + height / 2 + 80) + ")"
       )
       //.attr('id', "sunburst-g-" + ctrl.panel.id)
       .attr("id", "g-label-" + ctrl.panel.id);
