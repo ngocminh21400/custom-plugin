@@ -333,7 +333,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("text")
       .attr("transform", function (d) {
-        //console.log(labelTransform(d));
+        console.log(labelTransform(d));
         return labelTransform(d);
       })
       .style("fill", "white");
@@ -343,7 +343,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("polyline")
       .attr("points", function (d) {
-        var r =  ((height + margin.top + margin.bottom) / 2) * 0.9  * (d.y + d.dy); 
+        var r =  ((height) / 2) * 0.9  * (d.y + d.dy); 
       
         var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
         if (d.key == 'root') {
