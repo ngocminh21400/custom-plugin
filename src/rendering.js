@@ -453,8 +453,8 @@ export default function link(scope, elem, attrs, ctrl) {
     }
 
     d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .attr("width", width)
-      .attr("height", height );
+      .attr("width", 700)
+      .attr("height", 700 );
 
 
   }
