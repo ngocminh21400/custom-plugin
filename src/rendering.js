@@ -307,7 +307,7 @@ export default function link(scope, elem, attrs, ctrl) {
         dau_x = 1;
       }
 
-      return `translate(${x + 50 * dau_x }, ${y + 50 * dau_y })`;
+      return `translate(${x + 40 * dau_x }, ${y + 40 * dau_y })`;
     }
     
     function radians_to_degrees(radians)
@@ -349,7 +349,7 @@ export default function link(scope, elem, attrs, ctrl) {
         if (d.key == 'root') {
           return ` translate(0 ,0)`;
         }
-        if (d.dx*width < 30) {
+        if (d.dx*width < 10) {
           return;
         }
   
@@ -407,7 +407,7 @@ export default function link(scope, elem, attrs, ctrl) {
           if (d.key == 'root' || d.value == 0) {
             return;
           }
-          if (d.dx*width < 30) {
+          if (d.dx*width < 10) {
             return;
           }
 
