@@ -445,6 +445,7 @@ export default function link(scope, elem, attrs, ctrl) {
     //console.log(ctrl.panel.showLegend);
     //console.log(ctrl.panel.showLegend);
     if (ctrl.panel.showLegend == "1") {
+      console.log(true);
       buildFixedTooltip(partition.nodes(hierarchy));
      
     } else {
