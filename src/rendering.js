@@ -452,7 +452,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
     }
 
-    d3.select("#sunburst-svg-" + ctrl.panel.id)
+    var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id)
       .attr("width", 700)
       .attr("height", 700 );
 
