@@ -77,7 +77,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // Configure graph size
     var elemWidth = elem.width();
     var elemHeight = elem.height();
-    var margin = { top: 10, right: 10, bottom: 10, left: 10 };
+    var margin = { top: 30, right: 30, bottom: 30, left: 10 };
     var width = elemWidth - margin.left - margin.right;
     var height = elemHeight - margin.top - margin.bottom;
     var radius = Math.min(width, height) / 2;
