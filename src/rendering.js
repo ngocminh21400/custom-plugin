@@ -306,7 +306,7 @@ export default function link(scope, elem, attrs, ctrl) {
       } else {
         dau_x = 1;
       }
-      if ((d.y + d.dy) > 0.9) {
+      if ((d.y + d.dy) < 0.9) {
         return `rotate(0) translate(${x}, ${y})`;
 
       } else {
