@@ -77,7 +77,7 @@ export default function link(scope, elem, attrs, ctrl) {
     // Configure graph size
     var elemWidth = elem.width();
     var elemHeight = elem.height();
-    var margin = { top: 100, right: 100, bottom: 100, left: 100 };
+    var margin = { top: 10, right: 10, bottom: 10, left: 10 };
     var width = elemWidth - margin.left - margin.right;
     var height = elemHeight - margin.top - margin.bottom;
     var radius = Math.min(width, height) / 2;
@@ -307,7 +307,7 @@ export default function link(scope, elem, attrs, ctrl) {
         dau_x = 1;
       }
 
-      return `translate(${x + 50 * dau_x }, ${y +50 * dau_y })`;
+      return `translate(${x + 30 * dau_x }, ${y +30 * dau_y })`;
     }
     
     function radians_to_degrees(radians)
