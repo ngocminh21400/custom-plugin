@@ -246,7 +246,7 @@ export default function link(scope, elem, attrs, ctrl) {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
       });
-
+console.log(svg);
     const g = svg.append("g")
       .attr("transform", "translate(" +
         (margin.left + width  / 2) + ", " +
@@ -339,7 +339,7 @@ export default function link(scope, elem, attrs, ctrl) {
       .enter()
       .append("text")
       .attr("transform", function (d) {
-        console.log(labelTransform(d));
+        //console.log(labelTransform(d));
         return labelTransform(d);
       })
       .style("fill", "white");
