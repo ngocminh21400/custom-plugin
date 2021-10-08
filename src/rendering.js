@@ -355,7 +355,7 @@ export default function link(scope, elem, attrs, ctrl) {
         if (d.key == 'root') {
           return ` translate(0 ,0)`;
         }
-        if (d.dx*width < 10) {
+        if (d.dx*width < 10 || (d.y + d.dy) < 0.9) {
           return;
         }
   
