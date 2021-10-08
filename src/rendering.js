@@ -240,8 +240,8 @@ export default function link(scope, elem, attrs, ctrl) {
     d3.select("#g-label-" + ctrl.panel.id).remove();
   
     var svg = d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .attr("width", width + margin.left + margin.right +100)
-      .attr("height", height + margin.top + margin.bottom +100)
+      .attr("width", width + margin.left + margin.right )
+      .attr("height", height + margin.top + margin.bottom )
       .on("click", function () {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
