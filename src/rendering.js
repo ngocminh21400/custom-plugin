@@ -252,7 +252,7 @@ export default function link(scope, elem, attrs, ctrl) {
         (margin.left + width  / 2) + ", " +
         (margin.top  + height / 2) + ")"
       )
-      .attr('id', "sunburst-g-" + ctrl.panel.id)
+      //.attr('id', "sunburst-g-" + ctrl.panel.id)
       .attr("id", "g-label-" + ctrl.panel.id);
 
     // let content = '<text><textPath>123456789</textPath></text>';
@@ -452,7 +452,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
     }
 
-    
+    d3.select("#sunburst-svg-" + ctrl.panel.id)
+      .attr("width", width)
+      .attr("height", height );
 
 
   }
