@@ -282,7 +282,7 @@ export default function link(scope, elem, attrs, ctrl) {
     function labelTransform(d) {
       
       //console.log(d.key);
-      var r =  ((height ) / 2) * 0.9  * (d.y + d.dy); 
+      var r =  ((height ) / 2) * 0.95  * (d.y + d.dy); 
       
       var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
       if (d.key == 'root') {
