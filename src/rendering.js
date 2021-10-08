@@ -249,8 +249,8 @@ export default function link(scope, elem, attrs, ctrl) {
 
     const g = svg.append("g")
       .attr("transform", "translate(" +
-        (margin.left + width  / 2) + ", " +
-        (margin.top  + height / 2) + ")"
+        (margin.left + width  / 2 + 50) + ", " +
+        (margin.top  + height / 2 + 50) + ")"
       )
       //.attr('id', "sunburst-g-" + ctrl.panel.id)
       .attr("id", "g-label-" + ctrl.panel.id);
