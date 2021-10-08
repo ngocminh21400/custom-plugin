@@ -313,7 +313,7 @@ export default function link(scope, elem, attrs, ctrl) {
         return `rotate(0) translate(${x}, ${y})`;
 
       } else {
-        return `translate(${x + 40 * dau_x }, ${y + 40 * dau_y })`;
+        return `translate(${x + 60 * dau_x }, ${y + 40 * dau_y })`;
 
       }
 
@@ -382,10 +382,12 @@ export default function link(scope, elem, attrs, ctrl) {
           dau_x = 1;
         }
 
-        return `${x} ${y}, ${x + 30 * dau_x } ${y +30 * dau_y }`;
+        return `${x} ${y}, ${x + 30 * dau_x } ${y +30 * dau_y }, ${x + 50 * dau_x } ${y +30 * dau_y }`;
       })
       .style({"fill":"none","stroke":"white","stroke-width":2});
     
+    
+    //legend
     if (ctrl.panel.showLegend == "1") {
       console.log(true);
       buildFixedTooltip(partition.nodes(hierarchy));
@@ -454,36 +456,6 @@ export default function link(scope, elem, attrs, ctrl) {
   }
 
   // Functions
-  function labelName() {
-    lb.append("tspan").attr("x", 0)
-    .text(function(d) {
-      //console.log(d);
-      if (d.key == 'root' || d.value == 0) {
-        return;
-      }
-      if (d.dx*width < 30) {
-        return;
-      }
-
-      return d.key;
-    });
-  }
-  function labelValue() {
-    lb.append("tspan").attr("x", 0)
-    .attr("dy", "1.5em")
-    .style("font-weight","500")
-    .text(function(d) {
-      //console.log(d);
-      if (d.key == 'root' || d.value == 0) {
-        return;
-      }
-      if (d.dx*width < 30) {
-        return;
-      }
-
-      return d.value;
-    });
-  }
 
   function createHierarchy(datapoints) {
     var nest = d3.nest();
