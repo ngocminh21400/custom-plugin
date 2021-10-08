@@ -413,7 +413,7 @@ export default function link(scope, elem, attrs, ctrl) {
           if (d.key == 'root' || d.value == 0) {
             return;
           }
-          if (d.dx*width < 10) {
+          if ((d.dx*width < 30 && (d.dy + d.y) < 0.9) || d.dx*width < 10) {
             return;
           }
 
@@ -429,7 +429,7 @@ export default function link(scope, elem, attrs, ctrl) {
           if (d.key == 'root' || d.value == 0) {
             return;
           }
-          if (d.dx*width < 30) {
+          if ((d.dx*width < 30 && (d.dy + d.y) < 0.9) || d.dx*width < 10) {
             return;
           }
 
