@@ -313,7 +313,7 @@ export default function link(scope, elem, attrs, ctrl) {
         return `rotate(0) translate(${x}, ${y})`;
 
       } else {
-        return `translate(${x + 60 * dau_x }, ${y + 40 * dau_y })`;
+        return `translate(${x + 65 * dau_x }, ${y + 35 * dau_y })`;
 
       }
 
