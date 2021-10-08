@@ -78,8 +78,10 @@ export default function link(scope, elem, attrs, ctrl) {
     var elemWidth = elem.width();
     var elemHeight = elem.height();
     var margin = { top: 10, right: 10, bottom: 10, left: 10 };
-    var width = elemWidth - margin.left - margin.right;
-    var height = elemHeight - margin.top - margin.bottom;
+    var width_ = elemWidth - margin.left - margin.right;
+    var height_ = elemHeight - margin.top - margin.bottom;
+    var width = width_ - 100;
+    var height = height_ - 100;
     var radius = Math.min(width, height) / 2;
     var topDepth = 0;
 
@@ -240,8 +242,8 @@ export default function link(scope, elem, attrs, ctrl) {
     d3.select("#g-label-" + ctrl.panel.id).remove();
   
     var svg = d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .attr("width", width + margin.left + margin.right )
-      .attr("height", height + margin.top + margin.bottom )
+      .attr("width", width_ + margin.left + margin.right )
+      .attr("height", height_ + margin.top + margin.bottom )
       .on("click", function () {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
