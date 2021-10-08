@@ -240,8 +240,8 @@ export default function link(scope, elem, attrs, ctrl) {
     d3.select("#g-label-" + ctrl.panel.id).remove();
   
     var svg = d3.select("#sunburst-svg-" + ctrl.panel.id)
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", width + margin.left + margin.right +100)
+      .attr("height", height + margin.top + margin.bottom +100)
       .on("click", function () {
         d3.select("#sunburst-tooltip-" + ctrl.panel.id)
           .classed('hidden', true);
@@ -255,6 +255,7 @@ export default function link(scope, elem, attrs, ctrl) {
       //.attr('id', "sunburst-g-" + ctrl.panel.id)
       .attr("id", "g-label-" + ctrl.panel.id);
 
+    console.log(svg);
     // let content = '<text><textPath>123456789</textPath></text>';
     // var i = 0;
     var g_path = g.append("g");
@@ -457,9 +458,9 @@ export default function link(scope, elem, attrs, ctrl) {
     // svg.attr("width", 700)
     //   .attr("height", 700);
     // console.log(svg);
-    var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id);
+    // var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id);
 
-    console.log(svg_change);
+    // console.log(svg_change);
   }
 
   // Functions
