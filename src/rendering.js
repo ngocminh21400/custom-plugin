@@ -386,11 +386,22 @@ export default function link(scope, elem, attrs, ctrl) {
       })
       .style({"fill":"none","stroke":"white","stroke-width":2});
     
+    if (ctrl.panel.showLegend == "1") {
+      console.log(true);
+      buildFixedTooltip(partition.nodes(hierarchy));
+      
+    } else {
+      console.log(false);
+      var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
+      legend.selectAll('table').remove();
+      legend.selectAll('p').remove();
+
+    }
+  
     
     
     
 
-    //console.log(ctrl.panel.showLabel);
 
     switch (ctrl.panel.showLabel) {
       case "1":
@@ -440,30 +451,6 @@ export default function link(scope, elem, attrs, ctrl) {
         });
       }
 
-    //console.log(lb);
-    //build legend
-    //console.log(ctrl.panel.showLegend);
-    //console.log(ctrl.panel.showLegend);
-    if (ctrl.panel.showLegend == "1") {
-      console.log(true);
-      buildFixedTooltip(partition.nodes(hierarchy));
-     
-    } else {
-      console.log(false);
-      var legend = d3.select("#sunburst-legend-" + ctrl.panel.id);
-      legend.selectAll('table').remove();
-      legend.selectAll('p').remove();
-
-    }
-
-
-    // console.log(svg);
-    // svg.attr("width", 700)
-    //   .attr("height", 700);
-    // console.log(svg);
-    // var svg_change = d3.select("#sunburst-svg-" + ctrl.panel.id);
-
-    // console.log(svg_change);
   }
 
   // Functions
