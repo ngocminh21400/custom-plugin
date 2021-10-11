@@ -390,7 +390,7 @@ export default function link(scope, elem, attrs, ctrl) {
         .attr("x", function () {
           if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
             return "0";
-          } else return;
+          } else { return "" };
         })
         .text(function(d) {
           //console.log(d);
@@ -409,12 +409,12 @@ export default function link(scope, elem, attrs, ctrl) {
           .attr("x", function () {
             if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
               return "0";
-            } else return;
+            } else { return "" };
           })
           .attr("dy", function () {
             if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
               return "1.5em";
-            } else return;
+            } else { return "" };
           })
           
         .style("font-weight","500")
