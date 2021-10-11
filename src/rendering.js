@@ -386,12 +386,7 @@ export default function link(scope, elem, attrs, ctrl) {
 
       // Functions
       function labelName() {
-        lb.append("tspan")
-        .attr("x", function () {
-          if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
-            return "0";
-          } else { return "" };
-        })
+        lb.append("tspan").attr("x", 0)
         .text(function(d) {
           //console.log(d);
           if (d.key == 'root' || d.value == 0) {
@@ -405,18 +400,8 @@ export default function link(scope, elem, attrs, ctrl) {
         });
       }
       function labelValue() {
-        lb.append("tspan")
-          .attr("x", function () {
-            if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
-              return "0";
-            } else { return "" };
-          })
-          .attr("dy", function () {
-            if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
-              return "1.5em";
-            } else { return "" };
-          })
-          
+        lb.append("tspan").attr("x", 0)
+        .attr("dy", "1.5em")
         .style("font-weight","500")
         .text(function(d) {
           //console.log(d);
