@@ -347,45 +347,6 @@ export default function link(scope, elem, attrs, ctrl) {
       })
       .style("fill", "white");
     
-    const line = g_lable.selectAll("polyline")
-      .data(lb_data)
-      .enter()
-      .append("polyline")
-      .attr("points", function (d) {
-        var r =  ((height) / 2) * 0.9  * (d.y + d.dy); 
-      
-        var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
-        if (d.key == 'root') {
-          return ` translate(0 ,0)`;
-        }
-        if (d.dx*width < 10 || (d.y + d.dy) < 0.9) {
-          return;
-        }
-  
-        var x = (-1) * Math.cos(angle) * r;
-        var y = (-1) * Math.sin(angle) * r;
-  
-        //var rotate = radians_to_degrees(angle);
-        
-        //return `rotate(0) translate(${x}, ${y})`;
-        var dau_y = 0;
-        if (Math.sin(angle) > 0 ) {
-          dau_y = -1;
-        } else {
-          dau_y = 1;
-        }
-
-        var dau_x = 0;
-        if (Math.cos(angle) > 0 ) {
-          dau_x = -1;
-        } else {
-          dau_x = 1;
-        }
-
-        return `${x} ${y}, ${x + 30 * dau_x } ${y +30 * dau_y }, ${x + 50 * dau_x } ${y +30 * dau_y }`;
-      })
-      .style({"fill":"none","stroke":"white","stroke-width":2});
-    
     
     //legend
     if (ctrl.panel.showLegend == "1") {
@@ -408,9 +369,11 @@ export default function link(scope, elem, attrs, ctrl) {
     switch (ctrl.panel.showLabel) {
       case "1":
         labelName();
+        labelLine();
         break;
       case "2":
         labelValue();
+        labelLine();
         break;
       case "3":
         labelName();
@@ -451,6 +414,47 @@ export default function link(scope, elem, attrs, ctrl) {
 
           return d.value;
         });
+      }
+      function labelLine() {
+        const line = g_lable.selectAll("polyline")
+        .data(lb_data)
+        .enter()
+        .append("polyline")
+        .attr("points", function (d) {
+          var r =  ((height) / 2) * 0.9  * (d.y + d.dy); 
+        
+          var angle = (((d.x + (d.dx / 2))) * 2 * Math.PI) + (0.5 * Math.PI);
+          if (d.key == 'root') {
+            return ` translate(0 ,0)`;
+          }
+          if (d.dx*width < 10 || (d.y + d.dy) < 0.9) {
+            return;
+          }
+    
+          var x = (-1) * Math.cos(angle) * r;
+          var y = (-1) * Math.sin(angle) * r;
+    
+          //var rotate = radians_to_degrees(angle);
+          
+          //return `rotate(0) translate(${x}, ${y})`;
+          var dau_y = 0;
+          if (Math.sin(angle) > 0 ) {
+            dau_y = -1;
+          } else {
+            dau_y = 1;
+          }
+
+          var dau_x = 0;
+          if (Math.cos(angle) > 0 ) {
+            dau_x = -1;
+          } else {
+            dau_x = 1;
+          }
+
+          return `${x} ${y}, ${x + 30 * dau_x } ${y +30 * dau_y }, ${x + 50 * dau_x } ${y +30 * dau_y }`;
+        })
+        .style({"fill":"none","stroke":"white","stroke-width":2});
+      
       }
 
   }
