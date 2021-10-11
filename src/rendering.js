@@ -388,7 +388,7 @@ export default function link(scope, elem, attrs, ctrl) {
       function labelName() {
         lb.append("tspan")
           .attr("x", function (d) {
-          if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
+          if ((d.dy + d.y) < 0.9) {
             return "0";
           } else { return "" };
         })
@@ -407,12 +407,12 @@ export default function link(scope, elem, attrs, ctrl) {
       function labelValue() {
         lb.append("tspan")
         .attr("x", function (d) {
-          if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
+          if ((d.dy + d.y) < 0.9) {
             return "0";
           } else { return "" };
         })
         .attr("dy", function (d) {
-          if (d.dx * width < 30 && (d.dy + d.y) < 0.9) {
+          if ((d.dy + d.y) < 0.9) {
             return "1.5em";
           } else { return "" };
         })
